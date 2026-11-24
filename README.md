@@ -96,14 +96,13 @@ Output: `Boobalan_V_Resume.xlsx`
 
 ### Experience
 - **Megam Technologies** — Software Developer (Dec 2024 – Present)
-  - Datalytics BI platform, LLM + MCP integration, Angular/NestJS/MongoDB
-  - ERP with PHP + PostgreSQL
-  - GitLab CI/CD, Nginx/Apache deployment
-- **Shiash Info Solutions** — Junior Full-Stack Dev (Mar–May 2023)
+  - Datalytics: AI-Powered BI platform, Embed SDK & Charts/Tables UI library, LLM + MCP integration, Angular/NestJS/MongoDB, Nginx
+  - LeatherLink TanPro 11.0 (TMS) ERP: PHP + PostgreSQL (schema-per-tenant), Apache with PHP-FPM
+  - Automated mPDF reporting, production batch tracking, MongoDB audit workflows
 
 ### Projects
+- **Datalytics Embed SDK & UI Library** — Component library & SDK (TypeScript, Angular, npm)
 - **KYAAT** — Gesture-controlled mouse (Python, OpenCV)
-- **MSAJCE Canteen App** — Food ordering (XML, Firebase)
 - **Personal Portfolio** — alanz.netlify.app
 
 ### Education

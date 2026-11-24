@@ -111,9 +111,9 @@ function exportWord() {
 
           // Technical Skills
           heading("Technical Skills"),
-          bullet("Frontend: Angular, HTML5, CSS3, JavaScript, Bootstrap"),
-          bullet("Backend: Node.js, NestJS, Express.js, PHP, REST APIs"),
-          bullet("Databases: PostgreSQL, MongoDB, MySQL"),
+          bullet("Frontend: Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap"),
+          bullet("Backend: Node.js, NestJS, PHP, REST APIs"),
+          bullet("Databases: PostgreSQL, MongoDB"),
           bullet("Web Servers & Deployment: Nginx, Apache, Application Deployment"),
           bullet("Tools & CI/CD: Git, GitLab CI/CD, Postman, pgAdmin"),
           bullet("AI & Integration: Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration"),
@@ -123,22 +123,22 @@ function exportWord() {
           heading("Professional Experience"),
           new Paragraph({ children: [new TextRun({ text: "Megam Technologies", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   December 2024 – Present", bold: true, size: 19, color: "1E293B" })] }),
           new Paragraph({ children: [new TextRun({ text: "Software Developer | Chennai, India", italics: true, size: 19, color: "475569" })] }),
-          new Paragraph({ children: [new TextRun({ text: "Datalytics — Business Intelligence & Analytics Platform", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed and maintained features for a business intelligence platform, including MCP server tools that enable AI-assisted interaction with platform data and functionality."),
-          bullet("Integrated an open-source large language model (LLM) to support natural-language questions about business data and provide responses based on analytics information."),
-          bullet("Implemented functionality to generate reports and dashboards from user requests, covering operational metrics such as working hours, time spent, and issues created or closed."),
-          bullet("Supported comparative analysis of employee work activity and time allocation, alongside bug fixing, feature enhancements, and application maintenance."),
-          new Paragraph({ children: [new TextRun({ text: "ERP — Enterprise Resource Planning Application", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed and maintained ERP application features using PHP and PostgreSQL; implemented CRUD operations and integrated application functionality with existing database and system workflows."),
-          bullet("Created and modified SQL queries, views, materialized views, functions, and triggers to support business requirements; troubleshot application and database issues and implemented fixes."),
-          new Paragraph({ children: [new TextRun({ text: "Deployment & Development Operations", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Configured Nginx as a reverse proxy for Datalytics (Angular & Node.js/NestJS) and Apache HTTP Server for LeatherLink ERP (.htaccess modules, virtual hosts); supported server configuration and deployments."),
-          bullet("Worked with GitLab CI/CD pipelines to support application build and deployment workflows; used Git for version control and Postman for API testing and troubleshooting."),
-          blank(),
-
-          new Paragraph({ children: [new TextRun({ text: "Shiash Info Solutions Private Limited", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   March 2023 – May 2023", bold: true, size: 19, color: "1E293B" })] }),
-          new Paragraph({ children: [new TextRun({ text: "Junior Full-Stack Developer | Chennai, India", italics: true, size: 19, color: "475569" })] }),
-          bullet("Contributed to full-stack web development tasks using HTML, CSS, and JavaScript; assisted with feature implementation and debugging within an established software development team and workflow."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics — AI-Powered Business Intelligence Platform", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS."),
+          bullet("Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights."),
+          bullet("Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking."),
+          bullet("Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics — UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm."),
+          bullet("Embed SDK: Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication."),
+          bullet("Package Management & Integration: Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform."),
+          new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL."),
+          bullet("Implemented PostgreSQL schema-per-tenant isolation to ensure complete data security and privacy across multiple enterprise clients."),
+          bullet("Utilized MongoDB to implement immutable audit logs and multi-level approval workflows for tracking critical business transactions."),
+          bullet("Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates."),
+          bullet("Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards."),
+          bullet("Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup."),
           blank(),
 
           // Personal Projects
@@ -159,8 +159,8 @@ function exportWord() {
           // Achievements & Certifications
           heading("Achievements & Certifications"),
           bullet("The Versatile Rockstar Award, Megam Technologies, 2026 — certificate and trophy for excellent performance."),
-          bullet("Python Programming — Spoken Tutorial / CodeTantra"),
-          bullet("Full Stack Development — Infosys Springboard"),
+          bullet("Full Stack Development — Infosys Springboard (Frontend Frameworks, Backend APIs, & Databases)"),
+          bullet("Python Programming — Spoken Tutorial Project at IIT Bombay")
         ]
       }]
     });

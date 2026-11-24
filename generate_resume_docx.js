@@ -34,9 +34,9 @@ const SIZE_SECT  = 20;   // 10pt bold uppercase
 const SIZE_COMP  = 20;   // 10pt bold
 
 // Spacing tokens (in twips: 20 twips = 1 pt)
-const SP_BEFORE_SECTION = 100;
-const SP_AFTER_SECTION  = 40;
-const SP_BULLET         = 25;
+const SP_BEFORE_SECTION = 60;
+const SP_AFTER_SECTION  = 18;
+const SP_BULLET         = 12;
 
 function sectionHeading(title) {
   return new Paragraph({
@@ -143,7 +143,7 @@ function roleSubtitle(text) {
 
 function expSubHeading(text) {
   return new Paragraph({
-    spacing: { before: 60, after: 20 },
+    spacing: { before: 45, after: 15 },
     children: [
       new TextRun({
         text,
@@ -216,10 +216,10 @@ async function buildDocument() {
               height: 16838  // A4 height in twips (297mm)
             },
             margin: {
-              top: convertInchesToTwip(0.4),
-              bottom: convertInchesToTwip(0.4),
-              left: convertInchesToTwip(0.55),
-              right: convertInchesToTwip(0.55)
+              top: convertInchesToTwip(0.35),
+              bottom: convertInchesToTwip(0.35),
+              left: convertInchesToTwip(0.5),
+              right: convertInchesToTwip(0.5)
             }
           }
         },
@@ -281,10 +281,10 @@ async function buildDocument() {
           sectionHeading('Professional Summary'),
           new Paragraph({
             alignment: AlignmentType.JUSTIFIED,
-            spacing: { before: 25, after: 30 },
+            spacing: { before: 20, after: 25 },
             children: [
               new TextRun({
-                text: 'Software Developer with nearly 2 years of professional experience developing and maintaining web applications, working with APIs and databases, and supporting application deployments. Experienced in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Contributed to an AI-powered business intelligence platform featuring conversational data analysis, Model Context Protocol (MCP) tools, and user-requested report and dashboard generation. Hands-on experience with SQL database objects, Nginx, Apache, and GitLab CI/CD.',
+                text: 'Software Developer with nearly 2 years of professional experience developing responsive web applications, robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for conversational business intelligence, developing automated PDF reporting systems, and managing deployments on Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business requirements, and optimizing application performance.',
                 font: FONT,
                 size: SIZE_BODY,
                 color: BLACK
@@ -316,7 +316,7 @@ async function buildDocument() {
                         spacing: { before: 15, after: 15 },
                         children: [
                           new TextRun({ text: 'Frontend: ', font: FONT, size: SIZE_BODY, bold: true, color: BLACK }),
-                          new TextRun({ text: 'Angular, HTML5, CSS3, JavaScript, Bootstrap', font: FONT, size: SIZE_BODY, color: BLACK })
+                          new TextRun({ text: 'Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap', font: FONT, size: SIZE_BODY, color: BLACK })
                         ]
                       })
                     ]
@@ -329,7 +329,7 @@ async function buildDocument() {
                         spacing: { before: 15, after: 15 },
                         children: [
                           new TextRun({ text: 'Backend: ', font: FONT, size: SIZE_BODY, bold: true, color: BLACK }),
-                          new TextRun({ text: 'Node.js, NestJS, Express.js, PHP, REST APIs', font: FONT, size: SIZE_BODY, color: BLACK })
+                          new TextRun({ text: 'Node.js, NestJS, PHP, REST APIs', font: FONT, size: SIZE_BODY, color: BLACK })
                         ]
                       })
                     ]
@@ -346,7 +346,7 @@ async function buildDocument() {
                         spacing: { before: 15, after: 15 },
                         children: [
                           new TextRun({ text: 'Databases: ', font: FONT, size: SIZE_BODY, bold: true, color: BLACK }),
-                          new TextRun({ text: 'PostgreSQL, MongoDB, MySQL', font: FONT, size: SIZE_BODY, color: BLACK })
+                          new TextRun({ text: 'PostgreSQL, MongoDB', font: FONT, size: SIZE_BODY, color: BLACK })
                         ]
                       })
                     ]
@@ -411,30 +411,31 @@ async function buildDocument() {
           companyDateRow('Megam Technologies', 'December 2024 \u2013 Present'),
           roleSubtitle('Software Developer  |  Chennai, India'),
 
-          expSubHeading('Datalytics \u2014 Business Intelligence & Analytics Platform'),
-          bullet('Developed and maintained features for a business intelligence platform, including MCP server tools that enable AI-assisted interaction with platform data and functionality.'),
-          bullet('Integrated an open-source large language model (LLM) to support natural-language questions about business data and provide responses based on analytics information.'),
-          bullet('Implemented functionality to generate reports and dashboards from user requests, covering operational metrics such as working hours, time spent, and issues created or closed.'),
-          bullet('Supported comparative analysis of employee work activity and time allocation, alongside bug fixing, feature enhancements, and application maintenance.'),
+          expSubHeading('Datalytics \u2014 AI-Powered Business Intelligence Platform'),
+          bullet('Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.'),
+          bullet('Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights.'),
+          bullet('Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking.'),
+          bullet('Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines.'),
+
+          expSubHeading('Datalytics \u2014 UI Component Library & Embed SDK'),
+          bulletWithBold('UI Component Library: ', 'Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm.'),
+          bulletWithBold('Embed SDK: ', 'Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.'),
+          bulletWithBold('Package Management & Integration: ', 'Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.'),
 
           expSubHeading('LeatherLink TanPro 11.0 (TMS) \u2014 Multi-Tenant Industrial ERP'),
-          bullet('Developed and maintained features for an enterprise industrial ERP (300+ tables, ~200k+ LOC) using PHP, PostgreSQL (schema-per-tenant isolation), and MongoDB for audit logs and approval workflows.'),
-          bullet('Created and modified SQL queries, views, materialized views, functions, and triggers to support business requirements; troubleshot application and database issues and implemented fixes.'),
+          bullet('Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.'),
+          bullet('Implemented PostgreSQL schema-per-tenant isolation for secure client data separation, and used MongoDB for audit logs and approval workflows.'),
+          bullet('Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.'),
+          bullet('Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.'),
+          bullet('Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.'),
 
-          expSubHeading('Deployment & Development Operations'),
-          bullet('Configured Nginx as a reverse proxy for Datalytics (Angular & Node.js/NestJS) and Apache HTTP Server for LeatherLink ERP (.htaccess modules, virtual hosts); supported server configuration and deployments.'),
-          bullet('Worked with GitLab CI/CD pipelines to support application build and deployment workflows; used Git for version control and Postman for API testing and troubleshooting.'),
-
-          companyDateRow('Shiash Info Solutions Private Limited', 'March 2023 \u2013 May 2023'),
-          roleSubtitle('Junior Full-Stack Developer  |  Chennai, India'),
-          bullet('Contributed to full-stack web development tasks using HTML, CSS, and JavaScript; assisted with feature implementation and debugging within an established software development team and workflow.'),
 
           // Personal Projects
           sectionHeading('Personal Projects'),
 
           // KYAAT
           new Paragraph({
-            spacing: { before: 25, after: 8 },
+            spacing: { before: 20, after: 6 },
             children: [
               new TextRun({ text: 'KYAAT \u2014 Gesture-Controlled Mouse ', font: FONT, size: SIZE_BODY, bold: true, color: BLACK }),
               new TextRun({ text: '(Python, OpenCV)', font: FONT, size: SIZE_BODY - 1, italics: true, color: MUTED })
@@ -442,10 +443,10 @@ async function buildDocument() {
           }),
           new Paragraph({
             alignment: AlignmentType.JUSTIFIED,
-            spacing: { before: 0, after: 15 },
+            spacing: { before: 0, after: 12 },
             children: [
               new TextRun({
-                text: 'Developed a computer-vision tool using OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms response latency.',
+                text: 'Developed a computer-vision tool using Python and OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms response latency.',
                 font: FONT,
                 size: SIZE_BODY,
                 color: BLACK
@@ -455,7 +456,7 @@ async function buildDocument() {
 
           // Personal Portfolio
           new Paragraph({
-            spacing: { before: 15, after: 8 },
+            spacing: { before: 12, after: 6 },
             children: [
               new TextRun({ text: 'Personal Portfolio ', font: FONT, size: SIZE_BODY, bold: true, color: BLACK }),
               new TextRun({ text: '(Web Development)', font: FONT, size: SIZE_BODY - 1, italics: true, color: MUTED })
@@ -463,7 +464,7 @@ async function buildDocument() {
           }),
           new Paragraph({
             alignment: AlignmentType.JUSTIFIED,
-            spacing: { before: 0, after: 12 },
+            spacing: { before: 0, after: 8 },
             children: [
               new TextRun({
                 text: 'Designed and built a fully responsive personal portfolio website to showcase technical skills, live project demonstrations, and professional experience.',
@@ -474,7 +475,7 @@ async function buildDocument() {
             ]
           }),
           new Paragraph({
-            spacing: { before: 0, after: 20 },
+            spacing: { before: 0, after: 16 },
             children: [
               new TextRun({ text: 'Available at: ', font: FONT, size: SIZE_BODY, color: MUTED }),
               link('alanz.netlify.app', 'https://alanz.netlify.app/')
@@ -540,8 +541,8 @@ async function buildDocument() {
           // Achievements & Certifications
           sectionHeading('Achievements & Certifications'),
           bulletWithBold('The Versatile Rockstar Award,', ' Megam Technologies, 2026 \u2014 certificate and trophy for excellent performance.'),
-          bullet('Python Programming \u2014 Spoken Tutorial / CodeTantra'),
-          bullet('Full Stack Development \u2014 Infosys Springboard')
+          bullet('Full Stack Development \u2014 Infosys Springboard (Frontend Frameworks, Backend APIs, & Databases)'),
+          bullet('Python Programming \u2014 Spoken Tutorial Project at IIT Bombay')
         ]
       }
     ]

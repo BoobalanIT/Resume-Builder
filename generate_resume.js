@@ -118,9 +118,9 @@ async function createResume() {
     const contactCell1 = ws.getCell(`B${contactRow1.number}`);
     contactCell1.value = {
       richText: [
-        { text: 'Mayiladuthurai, Tamil Nadu, India  |  +91 9025006329  |  ', font: { name: 'Calibri', size: 9.5, color: { argb: MUTED_TEXT } } },
+        { text: 'Chennai, Tamil Nadu, India  |  +91 9025006329  |  ', font: { name: 'Calibri', size: 9.5, color: { argb: MUTED_TEXT } } },
         { 
-          text: 'boobalanvaithiyanathan@gmail.com',
+          text: 'boobalanvaithiyanathan1@gmail.com',
           font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true }
         }
       ]
@@ -135,11 +135,11 @@ async function createResume() {
     contactCell2.value = {
       richText: [
         { text: 'LinkedIn: ', font: { name: 'Calibri', size: 9.5, color: { argb: MUTED_TEXT } } },
-        { text: 'linkedin.com/in/boobalan', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } },
+        { text: 'linkedin.com/in/boobalan001', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } },
         { text: '  |  GitHub: ', font: { name: 'Calibri', size: 9.5, color: { argb: MUTED_TEXT } } },
-        { text: 'github.com/boobalan', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } },
+        { text: 'github.com/boobalanIT', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } },
         { text: '  |  Portfolio: ', font: { name: 'Calibri', size: 9.5, color: { argb: MUTED_TEXT } } },
-        { text: 'alanz-tech.netlify.app', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } }
+        { text: 'alanz.netlify.app', font: { name: 'Calibri', size: 9.5, color: { argb: LINK_BLUE }, underline: true } }
       ]
     };
     contactCell2.alignment = { vertical: 'middle', horizontal: 'center' };
@@ -153,7 +153,7 @@ async function createResume() {
     summaryRow.height = 58;
     ws.mergeCells(`B${summaryRow.number}:G${summaryRow.number}`);
     const summaryCell = ws.getCell(`B${summaryRow.number}`);
-    summaryCell.value = 'Software Developer with nearly 2 years of professional experience building and maintaining web applications. Experienced in Angular, Node.js/NestJS, PHP, MongoDB, and PostgreSQL, with hands-on work across frontend features, backend functionality, and database operations. Contributed to a business intelligence platform by implementing features, integrating AI capabilities with an open-source LLM using MCP, and resolving bugs. Interested in building reliable, maintainable applications and continuing to grow in full-stack development.';
+    summaryCell.value = 'Software Developer with nearly 2 years of professional experience developing responsive web applications, robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for conversational business intelligence, developing automated PDF reporting systems, and managing deployments on Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business requirements, and optimizing application performance.';
     summaryCell.font = { name: 'Calibri', size: 9.5, color: { argb: DARK_TEXT } };
     summaryCell.alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
 
@@ -173,7 +173,7 @@ async function createResume() {
 
     ws.mergeCells(`F${exp1Header.number}:G${exp1Header.number}`);
     const exp1DateCell = ws.getCell(`F${exp1Header.number}`);
-    exp1DateCell.value = 'Dec 2024 – Present';
+    exp1DateCell.value = 'December 2024 – Present';
     exp1DateCell.font = { name: 'Calibri', size: 10, bold: true, color: { argb: DARK_TEXT } };
     exp1DateCell.alignment = { vertical: 'middle', horizontal: 'right' };
 
@@ -182,7 +182,7 @@ async function createResume() {
     exp1Sub.height = 15;
     ws.mergeCells(`B${exp1Sub.number}:G${exp1Sub.number}`);
     const exp1SubCell = ws.getCell(`B${exp1Sub.number}`);
-    exp1SubCell.value = 'Software Developer | Chennai / Tamil Nadu, India';
+    exp1SubCell.value = 'Software Developer | Chennai, Tamil Nadu, India';
     exp1SubCell.font = { name: 'Calibri', size: 9.5, italic: true, color: { argb: MUTED_TEXT } };
     exp1SubCell.alignment = { vertical: 'middle', horizontal: 'left' };
 
@@ -202,41 +202,23 @@ async function createResume() {
       textCell.alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     }
 
-    addBullet('Develop and maintain features for Datalytics, a business intelligence and analytics platform, using the technologies relevant to assigned application components.', 2);
-    addBullet('Integrate AI capabilities with an open-source large language model using MCP to support AI-enabled product functionality.', 2);
-    addBullet('Investigate and fix application bugs, maintain existing features, and support ongoing product improvements.', 1);
-    addBullet('Work with Angular, Node.js/NestJS, and MongoDB across application development tasks.', 1);
-    addBullet('Develop and maintain ERP functionality using PHP and PostgreSQL.', 1);
-    addBullet('Write and work with PostgreSQL queries, joins, views, materialized views, triggers, functions, and CRUD operations.', 2);
-    addBullet('Build responsive user interfaces using HTML, CSS, and JavaScript, and manage source code and deployments through GitLab and CI/CD workflows.', 2);
+    // Datalytics Platform
+    addBullet('Datalytics: Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.', 2);
+    addBullet('Datalytics: Integrated an open-source large language model (LLM) using Model Context Protocol (MCP) for conversational business intelligence and automated insights.', 2);
+    addBullet('Datalytics: Built dynamic reporting tools and interactive dashboards to track operational metrics such as employee hours, project velocity, and issue tracking.', 2);
+    addBullet('Datalytics: Configured Nginx as a reverse proxy for client traffic and backend microservices; managed GitLab CI/CD pipelines.', 2);
 
-    addSpacer(5);
+    // Datalytics — UI Component Library & Embed SDK
+    addBullet('UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published to npm.', 2);
+    addBullet('Embed SDK: Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.', 2);
+    addBullet('Package Management & Integration: Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.', 2);
 
-    // Experience 2: Shiash Info Solutions
-    const exp2Header = ws.getRow(currentRow++);
-    exp2Header.height = 18;
-    ws.mergeCells(`B${exp2Header.number}:E${exp2Header.number}`);
-    const exp2CompCell = ws.getCell(`B${exp2Header.number}`);
-    exp2CompCell.value = 'Shiash Info Solutions Private Limited';
-    exp2CompCell.font = { name: 'Calibri', size: 10.5, bold: true, color: { argb: DARK_TEXT } };
-    exp2CompCell.alignment = { vertical: 'middle', horizontal: 'left' };
-
-    ws.mergeCells(`F${exp2Header.number}:G${exp2Header.number}`);
-    const exp2DateCell = ws.getCell(`F${exp2Header.number}`);
-    exp2DateCell.value = 'Mar 2023 – May 2023';
-    exp2DateCell.font = { name: 'Calibri', size: 10, bold: true, color: { argb: DARK_TEXT } };
-    exp2DateCell.alignment = { vertical: 'middle', horizontal: 'right' };
-
-    const exp2Sub = ws.getRow(currentRow++);
-    exp2Sub.height = 15;
-    ws.mergeCells(`B${exp2Sub.number}:G${exp2Sub.number}`);
-    const exp2SubCell = ws.getCell(`B${exp2Sub.number}`);
-    exp2SubCell.value = 'Junior Full-Stack Developer | Chennai, Tamil Nadu, India';
-    exp2SubCell.font = { name: 'Calibri', size: 9.5, italic: true, color: { argb: MUTED_TEXT } };
-    exp2SubCell.alignment = { vertical: 'middle', horizontal: 'left' };
-
-    addBullet('Assisted in developing web application modules using HTML, CSS, and JavaScript.', 1);
-    addBullet('Gained hands-on experience with full-stack development workflows and collaborative software development practices.', 1);
+    // LeatherLink TanPro 11.0 (TMS)
+    addBullet('LeatherLink TanPro 11.0 (TMS): Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.', 2);
+    addBullet('LeatherLink TanPro 11.0 (TMS): Implemented PostgreSQL schema-per-tenant isolation for secure client data separation, and used MongoDB for audit logs and approval workflows.', 2);
+    addBullet('LeatherLink TanPro 11.0 (TMS): Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.', 2);
+    addBullet('LeatherLink TanPro 11.0 (TMS): Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.', 2);
+    addBullet('LeatherLink TanPro 11.0 (TMS): Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.', 2);
 
     // -------------------------------------------------------------
     // 4. TECHNICAL SKILLS
@@ -263,11 +245,12 @@ async function createResume() {
       cell.alignment = { vertical: 'middle', horizontal: 'left' };
     }
 
-    addSkillCategory('Frontend', 'Angular, HTML, CSS, JavaScript, Bootstrap');
-    addSkillCategory('Backend', 'Node.js, NestJS, PHP');
-    addSkillCategory('Databases', 'MongoDB, PostgreSQL, MySQL');
-    addSkillCategory('AI / Integration', 'Open-source LLM integration, Model Context Protocol (MCP)');
-    addSkillCategory('Tools', 'Git, GitLab, Postman, pgAdmin, CI/CD pipelines');
+    addSkillCategory('Frontend', 'Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap');
+    addSkillCategory('Backend', 'Node.js, NestJS, PHP, REST APIs');
+    addSkillCategory('Databases', 'PostgreSQL, MongoDB');
+    addSkillCategory('Web Servers & Deployment', 'Nginx, Apache, Application Deployment');
+    addSkillCategory('Tools & CI/CD', 'Git, GitLab CI/CD, Postman, pgAdmin');
+    addSkillCategory('AI & Integration', 'Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration');
 
     // -------------------------------------------------------------
     // 5. SELECTED PERSONAL PROJECTS
@@ -300,9 +283,8 @@ async function createResume() {
       textCell.alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     }
 
-    addProject('KYAAT – Gesture-Controlled Mouse', 'Built a hand-gesture-controlled mouse using Python and OpenCV to support touch-free cursor control.', 1);
-    addProject('MSAJCE Canteen App', 'Developed a college canteen food-ordering app using XML and Firebase to support meal pre-ordering.', 1);
-    addProject('Personal Portfolio', 'Created a responsive portfolio website (alanz-tech.netlify.app) to showcase technical skills and web projects.', 1);
+    addProject('KYAAT – Gesture-Controlled Mouse', 'Developed a computer-vision tool using Python and OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms latency.', 2);
+    addProject('Personal Portfolio', 'Designed and built a fully responsive personal portfolio website (alanz.netlify.app) to showcase technical skills, live project demonstrations, and professional experience.', 2);
 
     // -------------------------------------------------------------
     // 6. EDUCATION
@@ -313,7 +295,7 @@ async function createResume() {
     eduRow.height = 18;
     ws.mergeCells(`B${eduRow.number}:E${eduRow.number}`);
     const eduTitleCell = ws.getCell(`B${eduRow.number}`);
-    eduTitleCell.value = 'B.Tech in Information Technology — Mohamed Sathak A J College of Engineering';
+    eduTitleCell.value = 'Bachelor of Technology (B.Tech) — Information Technology';
     eduTitleCell.font = { name: 'Calibri', size: 10, bold: true, color: { argb: DARK_TEXT } };
     eduTitleCell.alignment = { vertical: 'middle', horizontal: 'left' };
 
@@ -327,7 +309,7 @@ async function createResume() {
     eduSub.height = 15;
     ws.mergeCells(`B${eduSub.number}:G${eduSub.number}`);
     const eduSubCell = ws.getCell(`B${eduSub.number}`);
-    eduSubCell.value = 'Academic Performance: 80% (First Class with Distinction)';
+    eduSubCell.value = 'Mohamed Sathak A J College of Engineering  |  Chennai, India  |  80% (First Class)';
     eduSubCell.font = { name: 'Calibri', size: 9.5, italic: true, color: { argb: MUTED_TEXT } };
     eduSubCell.alignment = { vertical: 'middle', horizontal: 'left' };
 
@@ -351,9 +333,9 @@ async function createResume() {
       textCell.alignment = { vertical: 'middle', horizontal: 'left' };
     }
 
-    addCert('Good Performer Award — 2026 (Awarded for outstanding technical contribution & performance)');
-    addCert('Full Stack Development — Infosys Springboard');
-    addCert('Python Certification — Spoken Tutorial / CodeTantra');
+    addCert('The Versatile Rockstar Award, Megam Technologies, 2026 — certificate and trophy for excellent performance.');
+    addCert('Full Stack Development — Infosys Springboard (Frontend Frameworks, Backend APIs, & Databases)');
+    addCert('Python Programming — Spoken Tutorial Project at IIT Bombay');
 
     addSpacer(10);
   }
@@ -399,23 +381,22 @@ async function createResume() {
   });
 
   const atsData = [
-    { section: 'Personal Information', cat: 'Full Name', item: 'Boobalan V', period: '-', loc: 'Mayiladuthurai, Tamil Nadu, India', details: 'Phone: +91 9025006329 | Email: boobalanvaithiyanathan@gmail.com' },
-    { section: 'Personal Information', cat: 'Links', item: 'Online Profiles', period: '-', loc: 'Web', details: 'LinkedIn: linkedin.com/in/boobalan | GitHub: github.com/boobalan | Portfolio: alanz-tech.netlify.app' },
-    { section: 'Summary', cat: 'Professional Summary', item: 'Software Developer', period: '~2 Years Exp', loc: 'India', details: 'Full-stack developer experienced in Angular, Node.js/NestJS, PHP, PostgreSQL, MongoDB, and LLM MCP integration.' },
-    { section: 'Experience', cat: 'Megam Technologies', item: 'Software Developer', period: 'Dec 2024 – Present', loc: 'Tamil Nadu, India', details: 'Develop features for Datalytics BI platform, LLM AI integration via MCP, Angular, Node.js/NestJS, MongoDB, ERP modules in PHP & PostgreSQL.' },
-    { section: 'Experience', cat: 'Shiash Info Solutions', item: 'Junior Full-Stack Developer', period: 'Mar 2023 – May 2023', loc: 'Chennai, India', details: 'Assisted in developing web application modules using HTML, CSS, JavaScript; engaged in collaborative agile workflows.' },
-    { section: 'Technical Skills', cat: 'Frontend', item: 'Client-side Engineering', period: 'Active', loc: '-', details: 'Angular, HTML, CSS, JavaScript, Bootstrap' },
-    { section: 'Technical Skills', cat: 'Backend', item: 'Server & Microservices', period: 'Active', loc: '-', details: 'Node.js, NestJS, PHP' },
-    { section: 'Technical Skills', cat: 'Databases', item: 'Relational & NoSQL', period: 'Active', loc: '-', details: 'MongoDB, PostgreSQL, MySQL' },
-    { section: 'Technical Skills', cat: 'AI / Integration', item: 'Generative AI & LLMs', period: 'Active', loc: '-', details: 'Open-source LLM integration, Model Context Protocol (MCP)' },
-    { section: 'Technical Skills', cat: 'Tools', item: 'Developer Tooling & DevOps', period: 'Active', loc: '-', details: 'Git, GitLab, Postman, pgAdmin, CI/CD pipelines' },
-    { section: 'Personal Projects', cat: 'KYAAT', item: 'Gesture-Controlled Mouse', period: 'Project', loc: 'Desktop', details: 'Python, OpenCV hand-gesture computer mouse control supporting touch-free cursor navigation.' },
-    { section: 'Personal Projects', cat: 'MSAJCE Canteen App', item: 'Food-Ordering App', period: 'Project', loc: 'Mobile', details: 'XML, Firebase real-time meal pre-ordering application for campus cafeteria.' },
-    { section: 'Personal Projects', cat: 'Personal Portfolio', item: 'Web Portfolio', period: 'Active', loc: 'alanz-tech.netlify.app', details: 'Created responsive portfolio website to showcase technical capabilities and live project demos.' },
-    { section: 'Education', cat: 'Mohamed Sathak A J College', item: 'B.Tech in Information Technology', period: '2020 – 2024', loc: 'Chennai, India', details: 'Graduated with 80% aggregate (First Class with Distinction).' },
-    { section: 'Certifications', cat: 'Megam Technologies', item: 'Good Performer Award', period: '2026', loc: 'Workplace', details: 'Recognized for outstanding technical contribution & project performance.' },
-    { section: 'Certifications', cat: 'Infosys Springboard', item: 'Full Stack Development', period: 'Certified', loc: 'Infosys', details: 'Comprehensive enterprise full-stack development certification.' },
-    { section: 'Certifications', cat: 'Spoken Tutorial / CodeTantra', item: 'Python Programming', period: 'Certified', loc: 'National Mission', details: 'Foundational and advanced Python language and scripting certification.' }
+    { section: 'Personal Information', cat: 'Full Name', item: 'Boobalan V', period: '-', loc: 'Chennai, Tamil Nadu, India', details: 'Phone: +91 9025006329 | Email: boobalanvaithiyanathan1@gmail.com' },
+    { section: 'Personal Information', cat: 'Links', item: 'Online Profiles', period: '-', loc: 'Web', details: 'LinkedIn: linkedin.com/in/boobalan001 | GitHub: github.com/boobalanIT | Portfolio: alanz.netlify.app' },
+    { section: 'Summary', cat: 'Professional Summary', item: 'Software Developer', period: 'Nearly 2 Years Exp', loc: 'India', details: 'Full-stack developer experienced in Angular, Node.js/NestJS, PHP, PostgreSQL, MongoDB, mPDF, and LLM MCP integration.' },
+    { section: 'Experience', cat: 'Megam Technologies', item: 'Software Developer', period: 'Dec 2024 – Present', loc: 'Chennai, Tamil Nadu, India', details: 'Develop features for Datalytics BI platform (LLM MCP integration, Angular, Node.js/NestJS, Nginx), Datalytics — UI Component Library & Embed SDK (independent Angular charts/tables library & dedicated package.json Embed SDK published to npm), and LeatherLink TMS industrial ERP (PHP, PostgreSQL schema-per-tenant, MongoDB audit logs, mPDF, Apache PHP-FPM).' },
+    { section: 'Technical Skills', cat: 'Frontend', item: 'Client-side Engineering', period: 'Active', loc: '-', details: 'Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap' },
+    { section: 'Technical Skills', cat: 'Backend', item: 'Server & Microservices', period: 'Active', loc: '-', details: 'Node.js, NestJS, PHP, REST APIs' },
+    { section: 'Technical Skills', cat: 'Databases', item: 'Relational & NoSQL', period: 'Active', loc: '-', details: 'PostgreSQL, MongoDB' },
+    { section: 'Technical Skills', cat: 'Web Servers & Deployment', item: 'Server Hosting & Ops', period: 'Active', loc: '-', details: 'Nginx, Apache, Application Deployment' },
+    { section: 'Technical Skills', cat: 'Tools & CI/CD', item: 'Developer Tooling & DevOps', period: 'Active', loc: '-', details: 'Git, GitLab CI/CD, Postman, pgAdmin' },
+    { section: 'Technical Skills', cat: 'AI & Integration', item: 'Generative AI & LLMs', period: 'Active', loc: '-', details: 'Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration' },
+    { section: 'Projects', cat: 'KYAAT', item: 'Gesture-Controlled Mouse', period: 'Project', loc: 'Desktop', details: 'Python, OpenCV hand-gesture computer mouse control supporting touch-free cursor navigation with sub-20ms latency.' },
+    { section: 'Projects', cat: 'Personal Portfolio', item: 'Web Portfolio', period: 'Active', loc: 'alanz.netlify.app', details: 'Created responsive portfolio website to showcase technical capabilities and live project demos.' },
+    { section: 'Education', cat: 'Mohamed Sathak A J College of Engineering', item: 'Bachelor of Technology (B.Tech) — Information Technology', period: '2020 – 2024', loc: 'Chennai, India', details: 'Graduated with 80% aggregate (First Class).' },
+    { section: 'Certifications', cat: 'Megam Technologies', item: 'The Versatile Rockstar Award', period: '2026', loc: 'Workplace', details: 'Certificate and trophy for excellent performance.' },
+    { section: 'Certifications', cat: 'Infosys Springboard', item: 'Full Stack Development', period: 'Certified', loc: 'Infosys', details: 'Frontend Frameworks, Backend APIs, & Databases.' },
+    { section: 'Certifications', cat: 'Spoken Tutorial Project at IIT Bombay', item: 'Python Programming', period: 'Certified', loc: 'IIT Bombay', details: 'Python language programming and scripting.' }
   ];
 
   atsData.forEach((item, idx) => {

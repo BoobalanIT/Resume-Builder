@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boobalan V — Resume</title>
+  <meta name="description" content="Professional resume of Boobalan V, Software Developer — Full-Stack Developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #1B365D;
+      --dark: #1E293B;
+      --muted: #4B5563;
+      --link: #0969DA;
+      --black: #0F172A;
+      --rule: #1B365D;
+    }
+
+    body {
+      background: #94A3B8;
+      font-family: 'Inter', 'Calibri', 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 10px 40px;
+      min-height: 100vh;
+    }
+
+    /* ── Toolbar ──────────────────────────────────────────────── */
+    .toolbar {
+      width: 794px;
+      background: #fff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .14);
+      margin-bottom: 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tb-brand {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tb-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      border: none;
+      transition: all .15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-navy:hover {
+      background: #122543;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: #fff;
+      color: #334155;
+      border: 1.5px solid #CBD5E1;
+    }
+
+    .btn-ghost:hover {
+      background: #F1F5F9;
+    }
+
+    /* ── A4 Page — exact 210×297 mm at 96 dpi ─────────────────── */
+    .a4-page {
+      width: 794px;
+      height: 1123px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .22), 0 1px 4px rgba(0, 0, 0, .1);
+      padding: 30px 44px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* fills vertical space evenly */
+    }
+
+    /* ── Header ───────────────────────────────────────────────── */
+    .hdr {
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .hdr-name {
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .5px;
+      line-height: 1.15;
+      margin-bottom: 3px;
+    }
+
+    .hdr-title {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+      letter-spacing: .15px;
+    }
+
+    .hdr-contact {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .hdr-contact a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .sp {
+      margin: 0 5px;
+      color: #94A3B8;
+    }
+
+    /* ── Section ──────────────────────────────────────────────── */
+    .sec {
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      border-bottom: 1.6px solid var(--rule);
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    /* ── Summary ──────────────────────────────────────────────── */
+    .summary {
+      font-size: 9.8px;
+      color: var(--black);
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* ── Skills ───────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 5px;
+    }
+
+    .sk {
+      font-size: 9.8px;
+      line-height: 1.5;
+      color: var(--black);
+    }
+
+    .sk b {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .sk-full {
+      grid-column: 1 / -1;
+    }
+
+    /* spans both columns */
+
+    /* ── Experience ───────────────────────────────────────────── */
+    .exp-block {
+      margin-bottom: 4px;
+    }
+
+    .exp-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .exp-co {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .exp-date {
+      font-size: 9.8px;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    .exp-role {
+      font-size: 9.5px;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .sub-head {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 4px 0 2px;
+    }
+
+    /* ── Bullets ──────────────────────────────────────────────── */
+    ul.bl {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.bl li {
+      font-size: 9.8px;
+      color: var(--black);
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 3.5px;
+      line-height: 1.48;
+    }
+
+    ul.bl li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    /* ── Projects ─────────────────────────────────────────────── */
+    .proj-item {
+      margin-bottom: 4px;
+    }
+
+    .proj-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .proj-name {
+      font-size: 10.2px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .proj-tech {
+      font-size: 9.2px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .proj-desc {
+      font-size: 9.8px;
+      color: var(--black);
+      line-height: 1.48;
+      margin-bottom: 1px;
+    }
+
+    .proj-url {
+      font-size: 9.8px;
+      color: var(--muted);
+    }
+
+    .proj-url a {
+      color: var(--link);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    /* ── Education ────────────────────────────────────────────── */
+    .edu-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .edu-deg {
+      font-size: 10.2px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .edu-year {
+      font-size: 9.8px;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    .edu-sub {
+      font-size: 9.8px;
+      color: var(--muted);
+    }
+
+    /* ── Print ────────────────────────────────────────────────── */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        overflow: hidden !important;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .a4-page {
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 8mm 13mm 6mm !important;
+        margin: 0 !important;
+        border: none !important;
+        box-sizing: border-box !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Toolbar ──────────────────────────────────────────────── -->
+  <div class="toolbar">
+    <div class="tb-brand">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+      Boobalan V. — A4 Resume (1 Page Guaranteed)
+    </div>
+    <div class="tb-actions">
+      <a href="Boobalan_V_Resume.pdf" download="Boobalan_V_Resume.pdf" class="btn btn-navy">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Download PDF (1 Page)
+      </a>
+      <a href="Boobalan_V_Resume.docx" download="Boobalan_V_Resume.docx" class="btn btn-ghost">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Download .docx
+      </a>
+      <button onclick="window.print()" class="btn btn-ghost">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9" />
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+          <rect x="6" y="14" width="12" height="8" />
+        </svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       A4 PAGE  ·  794 × 1123 px  ·  justify-content: space-between
+       fills every pixel top to bottom
+       ════════════════════════════════════════════════════════════ -->
+  <div class="a4-page" id="resume">
+
+    <!-- ── HEADER ────────────────────────────────────────────── -->
+    <header class="hdr">
+      <h1 class="hdr-name">BOOBALAN V</h1>
+      <div class="hdr-title">Software Developer | Full-Stack Developer</div>
+      <div class="hdr-contact">
+        Chennai, Tamil Nadu, India
+        <span class="sp">|</span> +91 9025006329
+        <span class="sp">|</span> <a
+          href="mailto:boobalanvaithiyanathan1@gmail.com">boobalanvaithiyanathan1@gmail.com</a>
+      </div>
+      <div class="hdr-contact">
+        LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank">Boobalan V.</a>
+        <span class="sp">|</span>
+        GitHub: <a href="https://github.com/boobalanIT" target="_blank">boobalanIT</a>
+        <span class="sp">|</span>
+        Portfolio: <a href="https://alanz.netlify.app/" target="_blank">alanz.netlify.app</a>
+      </div>
+    </header>
+
+    <!-- ── PROFESSIONAL SUMMARY ──────────────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Professional Summary</div>
+      <p class="summary">
+        Software Developer with nearly 2 years of professional experience developing and maintaining web applications,
+        working with APIs and databases, and supporting application deployments. Experienced in Angular, Node.js,
+        NestJS, PHP, PostgreSQL, and MongoDB. Contributed to an AI-powered business intelligence platform featuring
+        conversational data analysis, Model Context Protocol (MCP) tools, and user-requested report and dashboard
+        generation. Hands-on experience with SQL database objects, Nginx, Apache, and GitLab CI/CD.
+      </p>
+    </section>
+
+    <!-- ── TECHNICAL SKILLS ──────────────────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="sk"><b>Frontend:</b> Angular, HTML5, CSS3, JavaScript, Bootstrap</div>
+        <div class="sk"><b>Backend:</b> Node.js, NestJS, Express.js, PHP, REST APIs</div>
+        <div class="sk"><b>Databases:</b> PostgreSQL, MongoDB, MySQL</div>
+        <div class="sk"><b>Web Servers &amp; Deployment:</b> Nginx, Apache, Application Deployment</div>
+        <div class="sk"><b>Tools &amp; CI/CD:</b> Git, GitLab CI/CD, Postman, pgAdmin</div>
+        <div class="sk sk-full"><b>AI &amp; Integration:</b> Open-source LLM integration, Model Context Protocol (MCP),
+          AI-powered chatbot integration</div>
+      </div>
+    </section>
+
+    <!-- ── PROFESSIONAL EXPERIENCE ───────────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Professional Experience</div>
+
+      <!-- Megam Technologies -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <span class="exp-co">Megam Technologies</span>
+          <span class="exp-date">December 2024 – Present</span>
+        </div>
+        <div class="exp-role">Software Developer <span class="sp">|</span> Chennai, India</div>
+
+        <div class="sub-head">Datalytics — Business Intelligence &amp; Analytics Platform</div>
+        <ul class="bl">
+          <li>Developed and maintained features for a business intelligence platform, including MCP server tools that
+            enable AI-assisted interaction with platform data and functionality.</li>
+          <li>Integrated an open-source large language model (LLM) to support natural-language questions about business
+            data and provide responses based on analytics information.</li>
+          <li>Implemented functionality to generate reports and dashboards from user requests, covering operational
+            metrics such as working hours, time spent, and issues created or closed.</li>
+          <li>Supported comparative analysis of employee work activity and time allocation, alongside bug fixing,
+            feature enhancements, and application maintenance.</li>
+        </ul>
+
+        <div class="sub-head">LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP</div>
+        <ul class="bl">
+          <li>Developed and maintained features for an enterprise industrial ERP (300+ tables, ~200k+ LOC) using PHP,
+            PostgreSQL (schema-per-tenant isolation), and MongoDB for audit logs & approval workflows.</li>
+          <li>Created and modified SQL queries, views, materialized views, functions, and triggers to support business
+            requirements; troubleshot application and database issues and implemented fixes.</li>
+        </ul>
+
+        <div class="sub-head">Deployment &amp; Development Operations</div>
+        <ul class="bl">
+          <li>Configured Nginx as a reverse proxy for Datalytics (Angular &amp; Node.js/NestJS) and Apache HTTP Server for
+            LeatherLink ERP (.htaccess modules, virtual hosts); supported server configuration and deployments.</li>
+          <li>Worked with GitLab CI/CD pipelines to support application build and deployment workflows; used Git for
+            version control and Postman for API testing and troubleshooting.</li>
+        </ul>
+      </div>
+
+      <!-- Shiash -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <span class="exp-co">Shiash Info Solutions Private Limited</span>
+          <span class="exp-date">March 2023 – May 2023</span>
+        </div>
+        <div class="exp-role">Junior Full-Stack Developer <span class="sp">|</span> Chennai, India</div>
+        <ul class="bl">
+          <li>Contributed to full-stack web development tasks using HTML, CSS, and JavaScript; assisted with feature
+            implementation and debugging within an established software development team and workflow.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── PERSONAL PROJECTS ──────────────────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Personal Projects</div>
+      <div class="proj-item">
+        <div class="proj-hdr">
+          <span class="proj-name">KYAAT — Gesture-Controlled Mouse</span>
+          <span class="proj-tech">Python, OpenCV</span>
+        </div>
+        <p class="proj-desc">Developed a computer-vision tool using Python and OpenCV to recognize real-time hand
+          movements and translate gestures into mouse cursor interactions with sub-20ms response latency.</p>
+      </div>
+      <div class="proj-item">
+        <div class="proj-hdr">
+          <span class="proj-name">Personal Portfolio</span>
+          <span class="proj-tech">Web Development</span>
+        </div>
+        <p class="proj-desc">Designed and built a fully responsive personal portfolio website to showcase technical
+          skills, live project demonstrations, and professional experience.</p>
+        <p class="proj-url">Available at: <a href="https://alanz.netlify.app/"
+            target="_blank">alanz.netlify.app</a></p>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ──────────────────────────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Education</div>
+      <div class="edu-hdr">
+        <span class="edu-deg">Bachelor of Technology (B.Tech) — Information Technology</span>
+        <span class="edu-year">2020 – 2024</span>
+      </div>
+      <div class="edu-sub">
+        Mohamed Sathak A J College of Engineering
+        <span class="sp">|</span> Chennai, India
+        <span class="sp">|</span> 80% (First Class)
+      </div>
+    </section>
+
+    <!-- ── ACHIEVEMENTS & CERTIFICATIONS ──────────────────────── -->
+    <section class="sec">
+      <div class="sec-title">Achievements &amp; Certifications</div>
+      <ul class="bl">
+        <li><strong>The Versatile Rockstar </strong>Award, Megam Technologies, 2026 &#x2014; certificate and trophy for
+          excellent performance.</li>
+        <li>Python Programming &#x2014; Spoken Tutorial / CodeTantra</li>
+        <li>Full Stack Development &#x2014; Infosys Springboard</li>
+      </ul>
+    </section>
+
+  </div><!-- /a4-page -->
+
+</body>
+
+</html>

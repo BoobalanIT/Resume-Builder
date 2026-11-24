@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boobalan V. — Resume</title>
+  <meta name="description" content="Professional resume of Boobalan V., Software Developer | Full-Stack Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══ TOOLBAR ══ -->
+<div class="toolbar" id="toolbar">
+  <div class="toolbar-left">
+    <span class="app-title">📄 Boobalan V. — Resume Builder</span>
+    <button class="btn btn-outline" id="toggleEditBtn" onclick="toggleEdit()">✏️ Edit Mode</button>
+  </div>
+  <div class="toolbar-right">
+    <select id="themeSelect" onchange="applyTheme(this.value)" title="Choose color theme">
+      <option value="classic">🎨 Classic Navy</option>
+      <option value="modern">💜 Modern Purple</option>
+      <option value="minimal">⬛ Minimal Charcoal</option>
+      <option value="green">🌿 Emerald Green</option>
+    </select>
+    <button class="btn btn-primary" onclick="exportPDF()">⬇️ Export PDF</button>
+    <button class="btn btn-secondary" onclick="exportWord()">📝 Export Word</button>
+    <a href="Boobalan_V_Resume.docx" download="Boobalan_V_Resume.docx" class="btn btn-ghost">📎 Download .docx</a>
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print</button>
+  </div>
+</div>
+
+<!-- ══ RESUME PAPER (Exact A4 proportion) ══ -->
+<div class="page-wrapper">
+<div class="resume a4-page" id="resume">
+
+  <!-- ── HEADER ── -->
+  <header class="hdr">
+    <h1 class="hdr-name" id="name" contenteditable="false">BOOBALAN V.</h1>
+    <div class="hdr-title" id="jobTitle" contenteditable="false">Software Developer | Full-Stack Developer</div>
+    <div class="hdr-contact">
+      <span id="location" contenteditable="false">Chennai, Tamil Nadu, India</span>
+      <span class="sp">|</span>
+      <span id="phone" contenteditable="false">+91 9025006329</span>
+      <span class="sp">|</span>
+      <a id="email" href="mailto:boobalanvaithiyanathan1@gmail.com" contenteditable="false">boobalanvaithiyanathan1@gmail.com</a>
+    </div>
+    <div class="hdr-contact">
+      LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank" id="linkedin" contenteditable="false">Boobalan V.</a>
+      <span class="sp">|</span>
+      GitHub: <a href="https://github.com/boobalanIT" target="_blank" id="github" contenteditable="false">boobalanIT</a>
+      <span class="sp">|</span>
+      Portfolio: <a href="https://alanz.netlify.app/" target="_blank" id="portfolio" contenteditable="false">alanz.netlify.app</a>
+    </div>
+  </header>
+
+  <!-- ── PROFESSIONAL SUMMARY ── -->
+  <section class="sec">
+    <div class="sec-title">Professional Summary</div>
+    <p class="summary" id="summary" contenteditable="false">
+      Software Developer with nearly 2 years of professional experience developing and maintaining web applications,
+      working with APIs and databases, and supporting application deployments. Experienced in Angular, Node.js,
+      NestJS, PHP, PostgreSQL, and MongoDB. Contributed to an AI-powered business intelligence platform featuring
+      conversational data analysis, Model Context Protocol (MCP) tools, and user-requested report and dashboard
+      generation. Hands-on experience with SQL database objects, Nginx, Apache, and GitLab CI/CD.
+    </p>
+  </section>
+
+  <!-- ── TECHNICAL SKILLS ── -->
+  <section class="sec">
+    <div class="sec-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="sk"><b>Frontend:</b> <span contenteditable="false">Angular, HTML5, CSS3, JavaScript, Bootstrap</span></div>
+      <div class="sk"><b>Backend:</b> <span contenteditable="false">Node.js, NestJS, Express.js, PHP, REST APIs</span></div>
+      <div class="sk"><b>Databases:</b> <span contenteditable="false">PostgreSQL, MongoDB, MySQL</span></div>
+      <div class="sk"><b>Web Servers &amp; Deployment:</b> <span contenteditable="false">Nginx, Apache, Application Deployment</span></div>
+      <div class="sk"><b>Tools &amp; CI/CD:</b> <span contenteditable="false">Git, GitLab CI/CD, Postman, pgAdmin</span></div>
+      <div class="sk sk-full"><b>AI &amp; Integration:</b> <span contenteditable="false">Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration</span></div>
+    </div>
+  </section>
+
+  <!-- ── PROFESSIONAL EXPERIENCE ── -->
+  <section class="sec">
+    <div class="sec-title">Professional Experience</div>
+
+    <!-- Megam Technologies -->
+    <div class="exp-block">
+      <div class="exp-hdr">
+        <span class="exp-co" contenteditable="false">Megam Technologies</span>
+        <span class="exp-date" contenteditable="false">December 2024 – Present</span>
+      </div>
+      <div class="exp-role" contenteditable="false">Software Developer | Chennai, India</div>
+
+      <div class="sub-head">Datalytics — Business Intelligence &amp; Analytics Platform</div>
+      <ul class="bl">
+        <li contenteditable="false">Developed and maintained features for a business intelligence platform, including MCP server tools that enable AI-assisted interaction with platform data and functionality.</li>
+        <li contenteditable="false">Integrated an open-source large language model (LLM) to support natural-language questions about business data and provide responses based on analytics information.</li>
+        <li contenteditable="false">Implemented functionality to generate reports and dashboards from user requests, covering operational metrics such as working hours, time spent, and issues created or closed.</li>
+        <li contenteditable="false">Supported comparative analysis of employee work activity and time allocation, alongside bug fixing, feature enhancements, and application maintenance.</li>
+      </ul>
+
+      <div class="sub-head">LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP</div>
+      <ul class="bl">
+        <li contenteditable="false">Developed and maintained features for an enterprise industrial ERP (300+ tables, ~200k+ LOC) using PHP, PostgreSQL (schema-per-tenant isolation), and MongoDB for audit logs & approval workflows.</li>
+        <li contenteditable="false">Engineered complex SQL queries, views, materialized views, functions, triggers, and automated PDF document pipelines supporting 5-stage production batch tracking and stock assortment.</li>
+      </ul>
+
+      <div class="sub-head">Deployment &amp; Development Operations</div>
+      <ul class="bl">
+        <li contenteditable="false">Configured Nginx as a reverse proxy for Datalytics (Angular &amp; Node.js/NestJS) and Apache HTTP Server for LeatherLink ERP (.htaccess modules, virtual hosts); supported server configuration and deployments.</li>
+        <li contenteditable="false">Worked with GitLab CI/CD pipelines to support application build and deployment workflows; used Git for version control and Postman for API testing and troubleshooting.</li>
+      </ul>
+    </div>
+
+    <!-- Shiash Info Solutions -->
+    <div class="exp-block">
+      <div class="exp-hdr">
+        <span class="exp-co" contenteditable="false">Shiash Info Solutions Private Limited</span>
+        <span class="exp-date" contenteditable="false">March 2023 – May 2023</span>
+      </div>
+      <div class="exp-role" contenteditable="false">Junior Full-Stack Developer | Chennai, India</div>
+      <ul class="bl">
+        <li contenteditable="false">Contributed to full-stack web development tasks using HTML, CSS, and JavaScript; assisted with feature implementation and debugging within an established software development team and workflow.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PERSONAL PROJECTS ── -->
+  <section class="sec">
+    <div class="sec-title">Personal Projects</div>
+
+    <div class="proj-item">
+      <div class="proj-hdr">
+        <span class="proj-name" contenteditable="false">KYAAT — Gesture-Controlled Mouse</span>
+        <span class="proj-tech" contenteditable="false">Python, OpenCV</span>
+      </div>
+      <p class="proj-desc" contenteditable="false">Developed a computer-vision tool using Python and OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms response latency.</p>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-hdr">
+        <span class="proj-name" contenteditable="false">Personal Portfolio</span>
+        <span class="proj-tech" contenteditable="false">Web Development</span>
+      </div>
+      <p class="proj-desc" contenteditable="false">Designed and built a fully responsive personal portfolio website to showcase technical skills, live project demonstrations, and professional experience.</p>
+      <p class="proj-url">Available at: <a href="https://alanz.netlify.app/" target="_blank" contenteditable="false">alanz.netlify.app</a></p>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="sec">
+    <div class="sec-title">Education</div>
+    <div class="edu-hdr">
+      <span class="edu-deg" contenteditable="false">Bachelor of Technology (B.Tech) — Information Technology</span>
+      <span class="edu-year" contenteditable="false">2020 – 2024</span>
+    </div>
+    <div class="edu-sub" contenteditable="false">Mohamed Sathak A J College of Engineering <span class="sp">|</span> Chennai, India <span class="sp">|</span> 80% (First Class)</div>
+  </section>
+
+  <!-- ── ACHIEVEMENTS & CERTIFICATIONS ── -->
+  <section class="sec">
+    <div class="sec-title">Achievements &amp; Certifications</div>
+    <ul class="bl">
+      <li contenteditable="false"><strong>The Versatile Rockstar Award</strong>, Megam Technologies, 2026 — certificate and trophy for excellent performance.</li>
+      <li contenteditable="false">Python Programming — Spoken Tutorial / CodeTantra</li>
+      <li contenteditable="false">Full Stack Development — Infosys Springboard</li>
+    </ul>
+  </section>
+
+</div><!-- /resume -->
+</div><!-- /page-wrapper -->
+
+<!-- ══ QUICK EDIT SIDEBAR PANEL ══ -->
+<div class="edit-panel" id="editPanel">
+  <h3>✏️ Quick Edit</h3>
+  <label>Full Name</label>
+  <input type="text" id="q_name" oninput="syncText('name', this.value)" value="BOOBALAN V." />
+  <label>Job Title</label>
+  <input type="text" id="q_title" oninput="syncText('jobTitle', this.value)" value="Software Developer | Full-Stack Developer" />
+  <label>Location</label>
+  <input type="text" id="q_loc" oninput="syncText('location', this.value)" value="Chennai, Tamil Nadu, India" />
+  <label>Phone</label>
+  <input type="text" id="q_phone" oninput="syncText('phone', this.value)" value="+91 9025006329" />
+  <label>Email</label>
+  <input type="text" id="q_email" oninput="syncText('email', this.value)" value="boobalanvaithiyanathan1@gmail.com" />
+  <hr />
+  <label>Professional Summary</label>
+  <textarea rows="6" oninput="syncText('summary', this.value)">Software Developer with nearly 2 years of professional experience developing and maintaining web applications, working with APIs and databases, and supporting application deployments. Experienced in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Contributed to an AI-powered business intelligence platform featuring conversational data analysis, Model Context Protocol (MCP) tools, and user-requested report and dashboard generation. Hands-on experience with SQL database objects, Nginx, Apache, and GitLab CI/CD.</textarea>
+  <hr />
+  <small style="color:#64748B;font-size:11.5px;line-height:1.4;display:block;">
+    💡 <b>Tip:</b> Click directly on any text or bullet point inside the resume to edit it inline!
+  </small>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

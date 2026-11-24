@@ -34,9 +34,9 @@ const SIZE_SECT  = 20;   // 10pt bold uppercase
 const SIZE_COMP  = 20;   // 10pt bold
 
 // Spacing tokens (in twips: 20 twips = 1 pt)
-const SP_BEFORE_SECTION = 60;
-const SP_AFTER_SECTION  = 18;
-const SP_BULLET         = 12;
+const SP_BEFORE_SECTION = 45;
+const SP_AFTER_SECTION  = 14;
+const SP_BULLET         = 8;
 
 function sectionHeading(title) {
   return new Paragraph({
@@ -143,7 +143,7 @@ function roleSubtitle(text) {
 
 function expSubHeading(text) {
   return new Paragraph({
-    spacing: { before: 45, after: 15 },
+    spacing: { before: 32, after: 10 },
     children: [
       new TextRun({
         text,
@@ -216,10 +216,10 @@ async function buildDocument() {
               height: 16838  // A4 height in twips (297mm)
             },
             margin: {
-              top: convertInchesToTwip(0.35),
-              bottom: convertInchesToTwip(0.35),
-              left: convertInchesToTwip(0.5),
-              right: convertInchesToTwip(0.5)
+              top: convertInchesToTwip(0.32),
+              bottom: convertInchesToTwip(0.32),
+              left: convertInchesToTwip(0.48),
+              right: convertInchesToTwip(0.48)
             }
           }
         },
@@ -230,7 +230,7 @@ async function buildDocument() {
             spacing: { before: 0, after: 20 },
             children: [
               new TextRun({
-                text: 'BOOBALAN V.',
+                text: 'BOOBALAN V',
                 font: FONT,
                 size: SIZE_NAME,
                 bold: true,
@@ -267,7 +267,7 @@ async function buildDocument() {
             spacing: { before: 0, after: 50 },
             children: [
               new TextRun({ text: 'LinkedIn: ', font: FONT, size: SIZE_BODY, color: MUTED }),
-              link('Boobalan V.', 'https://www.linkedin.com/in/boobalan001/'),
+              link('Boobalan V', 'https://www.linkedin.com/in/boobalan001/'),
               sep(),
               new TextRun({ text: 'GitHub: ', font: FONT, size: SIZE_BODY, color: MUTED }),
               link('boobalanIT', 'https://github.com/boobalanIT'),
@@ -412,22 +412,25 @@ async function buildDocument() {
           roleSubtitle('Software Developer  |  Chennai, India'),
 
           expSubHeading('Datalytics \u2014 AI-Powered Business Intelligence Platform'),
-          bullet('Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.'),
-          bullet('Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights.'),
-          bullet('Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking.'),
-          bullet('Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines.'),
+          bullet('Developed responsive frontend components using Angular and integrated REST APIs built with Node.js and NestJS.'),
+          bullet('Integrated an open-source Large Language Model (LLM) with Model Context Protocol (MCP), enabling users to query business data using natural language and receive AI-generated insights.'),
+          bullet('Developed interactive dashboards and reporting features to monitor key business metrics, including employee work hours, project progress, and issue tracking.'),
+          bullet('Configured Nginx as a reverse proxy to route frontend requests and backend API traffic, and managed GitLab CI/CD pipelines for application deployment.'),
 
           expSubHeading('Datalytics \u2014 UI Component Library & Embed SDK'),
-          bulletWithBold('UI Component Library: ', 'Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm.'),
+          bulletWithBold('UI Component Library: ', 'Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, data tables with sorting, filtering, and pagination, and report configuration settings. Maintained independent versioning and published the package to npm.'),
           bulletWithBold('Embed SDK: ', 'Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.'),
           bulletWithBold('Package Management & Integration: ', 'Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.'),
 
-          expSubHeading('LeatherLink TanPro 11.0 (TMS) \u2014 Multi-Tenant Industrial ERP'),
-          bullet('Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.'),
-          bullet('Implemented PostgreSQL schema-per-tenant isolation for secure client data separation, and used MongoDB for audit logs and approval workflows.'),
-          bullet('Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.'),
-          bullet('Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.'),
-          bullet('Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.'),
+          expSubHeading('LeatherLink TanPro 11.0 \u2014 Tannery Management System (TMS)'),
+          bullet('Migrated PHP applications and servers, configured deployment environments, and performed application maintenance, bug fixes, and feature enhancements.'),
+          bullet('Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business operations across 300+ database tables.'),
+          bullet('Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for different enterprise clients.'),
+          bullet('Implemented and maintained MongoDB-based audit logging and multi-level approval workflows to track business transactions.'),
+          bullet('Developed and optimized SQL queries, views, materialized views, functions, and triggers to support application workflows and database operations.'),
+          bullet('Implemented automated PDF generation using mPDF for delivery challans, GST invoices, and job cards.'),
+          bullet('Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and environment configuration for multiple client applications.'),
+          bullet('Configured and maintained cron jobs to automate scheduled application tasks and background processes.'),
 
 
           // Personal Projects

@@ -203,22 +203,25 @@ async function createResume() {
     }
 
     // Datalytics Platform
-    addBullet('Datalytics: Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.', 2);
-    addBullet('Datalytics: Integrated an open-source large language model (LLM) using Model Context Protocol (MCP) for conversational business intelligence and automated insights.', 2);
-    addBullet('Datalytics: Built dynamic reporting tools and interactive dashboards to track operational metrics such as employee hours, project velocity, and issue tracking.', 2);
-    addBullet('Datalytics: Configured Nginx as a reverse proxy for client traffic and backend microservices; managed GitLab CI/CD pipelines.', 2);
+    addBullet('Datalytics: Developed responsive frontend components using Angular and integrated REST APIs built with Node.js and NestJS.', 2);
+    addBullet('Datalytics: Integrated an open-source Large Language Model (LLM) with Model Context Protocol (MCP), enabling users to query business data using natural language and receive AI-generated insights.', 2);
+    addBullet('Datalytics: Developed interactive dashboards and reporting features to monitor key business metrics, including employee work hours, project progress, and issue tracking.', 2);
+    addBullet('Datalytics: Configured Nginx as a reverse proxy to route frontend requests and backend API traffic, and managed GitLab CI/CD pipelines for application deployment.', 2);
 
     // Datalytics — UI Component Library & Embed SDK
-    addBullet('UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published to npm.', 2);
+    addBullet('UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, data tables with sorting, filtering, and pagination, and report configuration settings. Maintained independent versioning and published to npm.', 2);
     addBullet('Embed SDK: Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.', 2);
     addBullet('Package Management & Integration: Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.', 2);
 
-    // LeatherLink TanPro 11.0 (TMS)
-    addBullet('LeatherLink TanPro 11.0 (TMS): Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.', 2);
-    addBullet('LeatherLink TanPro 11.0 (TMS): Implemented PostgreSQL schema-per-tenant isolation for secure client data separation, and used MongoDB for audit logs and approval workflows.', 2);
-    addBullet('LeatherLink TanPro 11.0 (TMS): Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.', 2);
-    addBullet('LeatherLink TanPro 11.0 (TMS): Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.', 2);
-    addBullet('LeatherLink TanPro 11.0 (TMS): Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.', 2);
+    // LeatherLink TanPro 11.0 — Tannery Management System (TMS)
+    addBullet('LeatherLink TanPro 11.0: Migrated PHP applications and servers, configured deployment environments, and performed application maintenance, bug fixes, and feature enhancements.', 2);
+    addBullet('LeatherLink TanPro 11.0: Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business operations across 300+ database tables.', 2);
+    addBullet('LeatherLink TanPro 11.0: Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for different enterprise clients.', 2);
+    addBullet('LeatherLink TanPro 11.0: Implemented and maintained MongoDB-based audit logging and multi-level approval workflows to track business transactions.', 2);
+    addBullet('LeatherLink TanPro 11.0: Developed and optimized SQL queries, views, materialized views, functions, and triggers to support application workflows and database operations.', 2);
+    addBullet('LeatherLink TanPro 11.0: Implemented automated PDF generation using mPDF for delivery challans, GST invoices, and job cards.', 2);
+    addBullet('LeatherLink TanPro 11.0: Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and environment configuration for multiple client applications.', 2);
+    addBullet('LeatherLink TanPro 11.0: Configured and maintained cron jobs to automate scheduled application tasks and background processes.', 2);
 
     // -------------------------------------------------------------
     // 4. TECHNICAL SKILLS
@@ -384,7 +387,7 @@ async function createResume() {
     { section: 'Personal Information', cat: 'Full Name', item: 'Boobalan V', period: '-', loc: 'Chennai, Tamil Nadu, India', details: 'Phone: +91 9025006329 | Email: boobalanvaithiyanathan1@gmail.com' },
     { section: 'Personal Information', cat: 'Links', item: 'Online Profiles', period: '-', loc: 'Web', details: 'LinkedIn: linkedin.com/in/boobalan001 | GitHub: github.com/boobalanIT | Portfolio: alanz.netlify.app' },
     { section: 'Summary', cat: 'Professional Summary', item: 'Software Developer', period: 'Nearly 2 Years Exp', loc: 'India', details: 'Full-stack developer experienced in Angular, Node.js/NestJS, PHP, PostgreSQL, MongoDB, mPDF, and LLM MCP integration.' },
-    { section: 'Experience', cat: 'Megam Technologies', item: 'Software Developer', period: 'Dec 2024 – Present', loc: 'Chennai, Tamil Nadu, India', details: 'Develop features for Datalytics BI platform (LLM MCP integration, Angular, Node.js/NestJS, Nginx), Datalytics — UI Component Library & Embed SDK (independent Angular charts/tables library & dedicated package.json Embed SDK published to npm), and LeatherLink TMS industrial ERP (PHP, PostgreSQL schema-per-tenant, MongoDB audit logs, mPDF, Apache PHP-FPM).' },
+    { section: 'Experience', cat: 'Megam Technologies', item: 'Software Developer', period: 'Dec 2024 – Present', loc: 'Chennai, Tamil Nadu, India', details: 'Develop features for Datalytics BI platform (LLM MCP integration, Angular, Node.js/NestJS, Nginx), Datalytics — UI Component Library & Embed SDK (independent Angular charts/tables library & dedicated package.json Embed SDK published to npm), and LeatherLink TanPro 11.0 — Tannery Management System (TMS) (PHP, PostgreSQL schema-per-tenant, MongoDB audit logs, mPDF, Apache PHP-FPM).' },
     { section: 'Technical Skills', cat: 'Frontend', item: 'Client-side Engineering', period: 'Active', loc: '-', details: 'Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap' },
     { section: 'Technical Skills', cat: 'Backend', item: 'Server & Microservices', period: 'Active', loc: '-', details: 'Node.js, NestJS, PHP, REST APIs' },
     { section: 'Technical Skills', cat: 'Databases', item: 'Relational & NoSQL', period: 'Active', loc: '-', details: 'PostgreSQL, MongoDB' },

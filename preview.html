@@ -108,11 +108,10 @@
       height: 1123px;
       background: #fff;
       box-shadow: 0 8px 30px rgba(0, 0, 0, .22), 0 1px 4px rgba(0, 0, 0, .1);
-      padding: 30px 44px 30px;
+      padding: 32px 44px 32px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 13px;
+      justify-content: space-between;
       box-sizing: border-box;
     }
 
@@ -344,6 +343,13 @@
 
     @media print {
 
+      *,
+      *::before,
+      *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
       html,
       body {
         width: 210mm !important;
@@ -352,6 +358,8 @@
         padding: 0 !important;
         background: #fff !important;
         overflow: hidden !important;
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
       }
 
       .toolbar {
@@ -363,7 +371,7 @@
         width: 210mm !important;
         height: 297mm !important;
         max-height: 297mm !important;
-        padding: 8mm 13mm 6mm !important;
+        padding: 32px 44px 32px !important;
         margin: 0 !important;
         border: none !important;
         box-sizing: border-box !important;
@@ -388,7 +396,7 @@
         <line x1="16" y1="13" x2="8" y2="13" />
         <line x1="16" y1="17" x2="8" y2="17" />
       </svg>
-      Boobalan V. — A4 Resume (1 Page Guaranteed)
+      Boobalan V — A4 Resume (1 Page Guaranteed)
     </div>
     <div class="tb-actions">
       <a href="Boobalan_V_Resume.pdf" download="Boobalan_V_Resume.pdf" class="btn btn-navy">
@@ -435,7 +443,7 @@
           href="mailto:boobalanvaithiyanathan1@gmail.com">boobalanvaithiyanathan1@gmail.com</a>
       </div>
       <div class="hdr-contact">
-        LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank">Boobalan V.</a>
+        LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank">Boobalan V</a>
         <span class="sp">|</span>
         GitHub: <a href="https://github.com/boobalanIT" target="_blank">boobalanIT</a>
         <span class="sp">|</span>
@@ -484,29 +492,47 @@
 
         <div class="sub-head">Datalytics — AI-Powered Business Intelligence Platform</div>
         <ul class="bl">
-          <li>Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.</li>
-          <li>Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights.</li>
-          <li>Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking.</li>
-          <li>Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines.</li>
+          <li>Developed responsive frontend components using Angular and integrated REST APIs built with Node.js and
+            NestJS.</li>
+          <li>Integrated an open-source Large Language Model (LLM) with Model Context Protocol (MCP), enabling users to
+            query business data using natural language and receive AI-generated insights.</li>
+          <li>Developed interactive dashboards and reporting features to monitor key business metrics, including
+            employee work hours, project progress, and issue tracking.</li>
+          <li>Configured Nginx as a reverse proxy to route frontend requests and backend API traffic, and managed GitLab
+            CI/CD pipelines for application deployment.</li>
         </ul>
 
         <div class="sub-head">Datalytics — UI Component Library &amp; Embed SDK</div>
         <ul class="bl">
-          <li><b>UI Component Library:</b> Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm.</li>
-          <li><b>Embed SDK:</b> Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.</li>
-          <li><b>Package Management &amp; Integration:</b> Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.</li>
+          <li><b>UI Component Library:</b> Developed an independent, reusable Angular component library featuring
+            interactive charts (bar, line, area, and pie), KPI widgets, data tables with sorting, filtering, and
+            pagination, and report configuration settings. Maintained independent versioning and published the package
+            to npm.</li>
+          <li><b>Embed SDK:</b> Developed a reusable Embed SDK within the main application repository, with a dedicated
+            package.json and independent npm publishing configuration. Enabled third-party applications to embed live
+            analytics dashboards using token-based authentication.</li>
+          <li><b>Package Management &amp; Integration:</b> Managed independent versioning and npm releases for both
+            packages, and integrated updated library versions into the main Datalytics SaaS platform.</li>
         </ul>
 
-        <div class="sub-head">LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP</div>
+
+        <div class="sub-head">LeatherLink TanPro 11.0 — Tannery Management System (TMS)</div>
         <ul class="bl">
-          <li>Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.</li>
-          <li>Implemented PostgreSQL schema-per-tenant isolation to ensure complete data security and privacy across multiple enterprise clients.</li>
-          <li>Utilized MongoDB to implement immutable audit logs and multi-level approval workflows for tracking critical business transactions.</li>
-          <li>Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.</li>
-          <li>Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.</li>
-          <li>Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.</li>
+          <li>Migrated PHP applications and servers, configured deployment environments, and handled application
+            maintenance, bug fixes, and feature enhancements.</li>
+          <li>Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business
+            operations across 300+ database tables.</li>
+          <li>Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for different
+            enterprise clients, and maintained MongoDB-based audit logging and multi-level approval workflows to track
+            business transactions.</li>
+          <li>Developed and optimized SQL queries, views, materialized views, functions, and triggers to support
+            application workflows and database operations, and implemented automated PDF generation using mPDF for
+            delivery challans, GST invoices, and job cards.</li>
+          <li>Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and
+            environment configuration for multiple client applications.</li>
+          <li>Configured and maintained cron jobs to automate scheduled application tasks and background processes.</li>
         </ul>
-      </div>
+
     </section>
 
     <!-- ── PERSONAL PROJECTS ─────────────────────────────────── -->
@@ -517,14 +543,16 @@
           <span class="proj-name">KYAAT — Gesture-Controlled Mouse</span>
           <span class="proj-tech">Python, OpenCV</span>
         </div>
-        <p class="proj-desc">Developed a computer-vision tool using Python and OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms response latency.</p>
+        <p class="proj-desc">Developed a computer-vision tool using Python and OpenCV to recognize real-time hand
+          movements and translate gestures into mouse cursor interactions with sub-20ms response latency.</p>
       </div>
       <div class="proj-item">
         <div class="proj-hdr">
           <span class="proj-name">Personal Portfolio</span>
           <span class="proj-tech">Web Development</span>
         </div>
-        <p class="proj-desc">Designed and built a fully responsive personal portfolio website to showcase technical skills, live project demonstrations, and professional experience.</p>
+        <p class="proj-desc">Designed and built a fully responsive personal portfolio website to showcase technical
+          skills, live project demonstrations, and professional experience.</p>
         <p class="proj-url">Available at: <a href="https://alanz.netlify.app/" target="_blank">alanz.netlify.app</a></p>
       </div>
     </section>
@@ -549,7 +577,8 @@
       <ul class="bl">
         <li><strong>The Versatile Rockstar </strong>Award, Megam Technologies, 2026 &#x2014; certificate and trophy for
           excellent performance.</li>
-        <li>Full Stack Development &#x2014; Infosys Springboard (Frontend Frameworks, Backend APIs, &amp; Databases)</li>
+        <li>Full Stack Development &#x2014; Infosys Springboard (Frontend Frameworks, Backend APIs, &amp; Databases)
+        </li>
         <li>Python Programming &#x2014; Spoken Tutorial Project at IIT Bombay</li>
       </ul>
     </section>

@@ -1,193 +1,238 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boobalan V. — Resume</title>
-  <meta name="description" content="Professional resume of Boobalan V., Software Developer | Full-Stack Developer" />
+  <title>Boobalan V — Resume</title>
+  <meta name="description" content="Professional resume of Boobalan V, Software Developer | Full-Stack Developer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.min.js"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- ══ TOOLBAR ══ -->
-<div class="toolbar" id="toolbar">
-  <div class="toolbar-left">
-    <span class="app-title">📄 Boobalan V. — Resume Builder</span>
-    <button class="btn btn-outline" id="toggleEditBtn" onclick="toggleEdit()">✏️ Edit Mode</button>
+  <!-- ══ TOOLBAR ══ -->
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar-left">
+      <span class="app-title">📄 Boobalan V — Resume Builder</span>
+      <button class="btn btn-outline" id="toggleEditBtn" onclick="toggleEdit()">✏️ Edit Mode</button>
+    </div>
+    <div class="toolbar-right">
+      <select id="themeSelect" onchange="applyTheme(this.value)" title="Choose color theme">
+        <option value="classic">🎨 Classic Navy</option>
+        <option value="modern">💜 Modern Purple</option>
+        <option value="minimal">⬛ Minimal Charcoal</option>
+        <option value="green">🌿 Emerald Green</option>
+      </select>
+      <button class="btn btn-primary" onclick="exportPDF()">🖨️ Print / Save PDF</button>
+      <button class="btn btn-secondary" onclick="exportWord()">📝 Export Word</button>
+      <a href="Boobalan_V_Resume.docx" download="Boobalan_V_Resume.docx" class="btn btn-ghost">📎 Download .docx</a>
+      <button class="btn btn-ghost" onclick="window.print()">🖨️ Print</button>
+    </div>
   </div>
-  <div class="toolbar-right">
-    <select id="themeSelect" onchange="applyTheme(this.value)" title="Choose color theme">
-      <option value="classic">🎨 Classic Navy</option>
-      <option value="modern">💜 Modern Purple</option>
-      <option value="minimal">⬛ Minimal Charcoal</option>
-      <option value="green">🌿 Emerald Green</option>
-    </select>
-    <button class="btn btn-primary" onclick="exportPDF()">⬇️ Export PDF</button>
-    <button class="btn btn-secondary" onclick="exportWord()">📝 Export Word</button>
-    <a href="Boobalan_V_Resume.docx" download="Boobalan_V_Resume.docx" class="btn btn-ghost">📎 Download .docx</a>
-    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print</button>
+
+  <!-- ══ RESUME PAPER (Exact A4 proportion) ══ -->
+  <div class="page-wrapper">
+    <div class="resume a4-page" id="resume">
+
+      <!-- ── HEADER ── -->
+      <header class="hdr">
+        <h1 class="hdr-name" id="name" contenteditable="false">BOOBALAN V</h1>
+        <div class="hdr-title" id="jobTitle" contenteditable="false">Software Developer | Full-Stack Developer</div>
+        <div class="hdr-contact">
+          <span id="location" contenteditable="false">Chennai, Tamil Nadu, India</span>
+          <span class="sp">|</span>
+          <span id="phone" contenteditable="false">+91 9025006329</span>
+          <span class="sp">|</span>
+          <a id="email" href="mailto:boobalanvaithiyanathan1@gmail.com"
+            contenteditable="false">boobalanvaithiyanathan1@gmail.com</a>
+        </div>
+        <div class="hdr-contact">
+          LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank" id="linkedin"
+            contenteditable="false">Boobalan V</a>
+          <span class="sp">|</span>
+          GitHub: <a href="https://github.com/boobalanIT" target="_blank" id="github"
+            contenteditable="false">boobalanIT</a>
+          <span class="sp">|</span>
+          Portfolio: <a href="https://alanz.netlify.app/" target="_blank" id="portfolio"
+            contenteditable="false">alanz.netlify.app</a>
+        </div>
+      </header>
+
+      <!-- ── PROFESSIONAL SUMMARY ── -->
+      <section class="sec">
+        <div class="sec-title">Professional Summary</div>
+        <p class="summary" id="summary" contenteditable="false">
+          Software Developer with nearly 2 years of professional experience developing responsive web applications,
+          robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP,
+          PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for
+          conversational business intelligence, developing automated PDF reporting systems, and managing deployments on
+          Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business
+          requirements, and optimizing application performance.
+        </p>
+      </section>
+
+      <!-- ── TECHNICAL SKILLS ── -->
+      <section class="sec">
+        <div class="sec-title">Technical Skills</div>
+        <div class="skills-grid">
+          <div class="sk"><b>Frontend:</b> <span contenteditable="false">Angular, TypeScript, JavaScript, HTML5, CSS3,
+              Bootstrap</span></div>
+          <div class="sk"><b>Backend:</b> <span contenteditable="false">Node.js, NestJS, PHP, REST APIs</span></div>
+          <div class="sk"><b>Databases:</b> <span contenteditable="false">PostgreSQL, MongoDB</span></div>
+          <div class="sk"><b>Web Servers &amp; Deployment:</b> <span contenteditable="false">Nginx, Apache, Application
+              Deployment</span></div>
+          <div class="sk"><b>Tools &amp; CI/CD:</b> <span contenteditable="false">Git, GitLab CI/CD, Postman,
+              pgAdmin</span></div>
+          <div class="sk sk-full"><b>AI &amp; Integration:</b> <span contenteditable="false">Open-source LLM
+              integration, Model Context Protocol (MCP), AI-powered chatbot integration</span></div>
+        </div>
+      </section>
+
+      <!-- ── PROFESSIONAL EXPERIENCE ── -->
+      <section class="sec">
+        <div class="sec-title">Professional Experience</div>
+
+        <!-- Megam Technologies -->
+        <div class="exp-block">
+          <div class="exp-hdr">
+            <span class="exp-co" contenteditable="false">Megam Technologies</span>
+            <span class="exp-date" contenteditable="false">December 2024 – Present</span>
+          </div>
+          <div class="exp-role" contenteditable="false">Software Developer | Chennai, India</div>
+
+          <div class="sub-head">Datalytics — AI-Powered Business Intelligence Platform</div>
+          <ul class="bl">
+            <li contenteditable="false">Developed responsive frontend components using Angular and integrated REST APIs
+              built with Node.js and NestJS.</li>
+            <li contenteditable="false">Integrated an open-source Large Language Model (LLM) with Model Context Protocol
+              (MCP), enabling users to query business data using natural language and receive AI-generated insights.
+            </li>
+            <li contenteditable="false">Developed interactive dashboards and reporting features to monitor key business
+              metrics, including employee work hours, project progress, and issue tracking.</li>
+            <li contenteditable="false">Configured Nginx as a reverse proxy to route frontend requests and backend API
+              traffic, and managed GitLab CI/CD pipelines for application deployment.</li>
+          </ul>
+
+          <div class="sub-head">Datalytics — UI Component Library &amp; Embed SDK</div>
+          <ul class="bl">
+            <li contenteditable="false"><b>UI Component Library:</b> Developed an independent, reusable Angular
+              component library featuring interactive charts (bar, line, area, and pie), KPI widgets, data tables with
+              sorting, filtering, and pagination, and report configuration settings. Maintained independent versioning
+              and published the package to npm.</li>
+            <li contenteditable="false"><b>Embed SDK:</b> Developed a reusable Embed SDK within the main application
+              repository, with a dedicated package.json and independent npm publishing configuration. Enabled
+              third-party applications to embed live analytics dashboards using token-based authentication.</li>
+            <li contenteditable="false"><b>Package Management &amp; Integration:</b> Managed independent versioning and
+              npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS
+              platform.</li>
+          </ul>
+
+
+          <div class="sub-head">LeatherLink TanPro 11.0 — Tannery Management System (TMS)</div>
+          <ul class="bl">
+            <li>Migrated PHP applications and servers, configured deployment environments, and handled application
+              maintenance, bug fixes, and feature enhancements.</li>
+            <li>Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business
+              operations across 300+ database tables.</li>
+            <li>Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for
+              different enterprise clients, and maintained MongoDB-based audit logging and multi-level approval
+              workflows to track business transactions.</li>
+            <li>Developed and optimized SQL queries, views, materialized views, functions, and triggers to support
+              application workflows and database operations, and implemented automated PDF generation using mPDF for
+              delivery challans, GST invoices, and job cards.</li>
+            <li>Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and
+              environment configuration for multiple client applications.</li>
+            <li>Configured and maintained cron jobs to automate scheduled application tasks and background processes.
+            </li>
+          </ul>
+
+      </section>
+
+      <!-- ── PERSONAL PROJECTS ── -->
+      <section class="sec">
+        <div class="sec-title">Personal Projects</div>
+
+        <div class="proj-item">
+          <div class="proj-hdr">
+            <span class="proj-name" contenteditable="false">KYAAT — Gesture-Controlled Mouse</span>
+            <span class="proj-tech" contenteditable="false">Python, OpenCV</span>
+          </div>
+          <p class="proj-desc" contenteditable="false">Developed a computer-vision tool using Python and OpenCV to
+            recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms
+            response latency.</p>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-hdr">
+            <span class="proj-name" contenteditable="false">Personal Portfolio</span>
+            <span class="proj-tech" contenteditable="false">Web Development</span>
+          </div>
+          <p class="proj-desc" contenteditable="false">Designed and built a fully responsive personal portfolio website
+            to showcase technical skills, live project demonstrations, and professional experience.</p>
+          <p class="proj-url">Available at: <a href="https://alanz.netlify.app/" target="_blank"
+              contenteditable="false">alanz.netlify.app</a></p>
+        </div>
+      </section>
+
+      <!-- ── EDUCATION ── -->
+      <section class="sec">
+        <div class="sec-title">Education</div>
+        <div class="edu-hdr">
+          <span class="edu-deg" contenteditable="false">Bachelor of Technology (B.Tech) — Information Technology</span>
+          <span class="edu-year" contenteditable="false">2020 – 2024</span>
+        </div>
+        <div class="edu-sub" contenteditable="false">Mohamed Sathak A J College of Engineering <span class="sp">|</span>
+          Chennai, India <span class="sp">|</span> 80% (First Class)</div>
+      </section>
+
+      <!-- ── ACHIEVEMENTS & CERTIFICATIONS ── -->
+      <section class="sec">
+        <div class="sec-title">Achievements &amp; Certifications</div>
+        <ul class="bl">
+          <li contenteditable="false"><strong>The Versatile Rockstar Award</strong>, Megam Technologies, 2026 —
+            certificate and trophy for excellent performance.</li>
+          <li contenteditable="false">Full Stack Development — Infosys Springboard (Frontend Frameworks, Backend APIs,
+            &amp; Databases)</li>
+          <li contenteditable="false">Python Programming — Spoken Tutorial Project at IIT Bombay</li>
+        </ul>
+      </section>
+
+    </div><!-- /resume -->
+  </div><!-- /page-wrapper -->
+
+  <!-- ══ QUICK EDIT SIDEBAR PANEL ══ -->
+  <div class="edit-panel" id="editPanel">
+    <h3>✏️ Quick Edit</h3>
+    <label>Full Name</label>
+    <input type="text" id="q_name" oninput="syncText('name', this.value)" value="BOOBALAN V" />
+    <label>Job Title</label>
+    <input type="text" id="q_title" oninput="syncText('jobTitle', this.value)"
+      value="Software Developer | Full-Stack Developer" />
+    <label>Location</label>
+    <input type="text" id="q_loc" oninput="syncText('location', this.value)" value="Chennai, Tamil Nadu, India" />
+    <label>Phone</label>
+    <input type="text" id="q_phone" oninput="syncText('phone', this.value)" value="+91 9025006329" />
+    <label>Email</label>
+    <input type="text" id="q_email" oninput="syncText('email', this.value)" value="boobalanvaithiyanathan1@gmail.com" />
+    <hr />
+    <label>Professional Summary</label>
+    <textarea rows="6"
+      oninput="syncText('summary', this.value)">Software Developer with nearly 2 years of professional experience developing responsive web applications, robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for conversational business intelligence, developing automated PDF reporting systems, and managing deployments on Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business requirements, and optimizing application performance.</textarea>
+    <hr />
+    <small style="color:#64748B;font-size:11.5px;line-height:1.4;display:block;">
+      💡 <b>Tip:</b> Click directly on any text or bullet point inside the resume to edit it inline!
+    </small>
   </div>
-</div>
 
-<!-- ══ RESUME PAPER (Exact A4 proportion) ══ -->
-<div class="page-wrapper">
-<div class="resume a4-page" id="resume">
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
 
-  <!-- ── HEADER ── -->
-  <header class="hdr">
-    <h1 class="hdr-name" id="name" contenteditable="false">BOOBALAN V.</h1>
-    <div class="hdr-title" id="jobTitle" contenteditable="false">Software Developer | Full-Stack Developer</div>
-    <div class="hdr-contact">
-      <span id="location" contenteditable="false">Chennai, Tamil Nadu, India</span>
-      <span class="sp">|</span>
-      <span id="phone" contenteditable="false">+91 9025006329</span>
-      <span class="sp">|</span>
-      <a id="email" href="mailto:boobalanvaithiyanathan1@gmail.com" contenteditable="false">boobalanvaithiyanathan1@gmail.com</a>
-    </div>
-    <div class="hdr-contact">
-      LinkedIn: <a href="https://www.linkedin.com/in/boobalan001/" target="_blank" id="linkedin" contenteditable="false">Boobalan V.</a>
-      <span class="sp">|</span>
-      GitHub: <a href="https://github.com/boobalanIT" target="_blank" id="github" contenteditable="false">boobalanIT</a>
-      <span class="sp">|</span>
-      Portfolio: <a href="https://alanz.netlify.app/" target="_blank" id="portfolio" contenteditable="false">alanz.netlify.app</a>
-    </div>
-  </header>
-
-  <!-- ── PROFESSIONAL SUMMARY ── -->
-  <section class="sec">
-    <div class="sec-title">Professional Summary</div>
-    <p class="summary" id="summary" contenteditable="false">
-      Software Developer with nearly 2 years of professional experience developing responsive web applications, robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for conversational business intelligence, developing automated PDF reporting systems, and managing deployments on Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business requirements, and optimizing application performance.
-    </p>
-  </section>
-
-  <!-- ── TECHNICAL SKILLS ── -->
-  <section class="sec">
-    <div class="sec-title">Technical Skills</div>
-    <div class="skills-grid">
-      <div class="sk"><b>Frontend:</b> <span contenteditable="false">Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap</span></div>
-      <div class="sk"><b>Backend:</b> <span contenteditable="false">Node.js, NestJS, PHP, REST APIs</span></div>
-      <div class="sk"><b>Databases:</b> <span contenteditable="false">PostgreSQL, MongoDB</span></div>
-      <div class="sk"><b>Web Servers &amp; Deployment:</b> <span contenteditable="false">Nginx, Apache, Application Deployment</span></div>
-      <div class="sk"><b>Tools &amp; CI/CD:</b> <span contenteditable="false">Git, GitLab CI/CD, Postman, pgAdmin</span></div>
-      <div class="sk sk-full"><b>AI &amp; Integration:</b> <span contenteditable="false">Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration</span></div>
-    </div>
-  </section>
-
-  <!-- ── PROFESSIONAL EXPERIENCE ── -->
-  <section class="sec">
-    <div class="sec-title">Professional Experience</div>
-
-    <!-- Megam Technologies -->
-    <div class="exp-block">
-      <div class="exp-hdr">
-        <span class="exp-co" contenteditable="false">Megam Technologies</span>
-        <span class="exp-date" contenteditable="false">December 2024 – Present</span>
-      </div>
-      <div class="exp-role" contenteditable="false">Software Developer | Chennai, India</div>
-
-      <div class="sub-head">Datalytics — AI-Powered Business Intelligence Platform</div>
-      <ul class="bl">
-        <li contenteditable="false">Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS.</li>
-        <li contenteditable="false">Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights.</li>
-        <li contenteditable="false">Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking.</li>
-        <li contenteditable="false">Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines.</li>
-      </ul>
-
-      <div class="sub-head">Datalytics — UI Component Library &amp; Embed SDK</div>
-      <ul class="bl">
-        <li contenteditable="false"><b>UI Component Library:</b> Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm.</li>
-        <li contenteditable="false"><b>Embed SDK:</b> Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication.</li>
-        <li contenteditable="false"><b>Package Management &amp; Integration:</b> Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform.</li>
-      </ul>
-
-      <div class="sub-head">LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP</div>
-      <ul class="bl">
-        <li contenteditable="false">Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL.</li>
-        <li contenteditable="false">Implemented PostgreSQL schema-per-tenant isolation to ensure complete data security and privacy across multiple enterprise clients.</li>
-        <li contenteditable="false">Utilized MongoDB to implement immutable audit logs and multi-level approval workflows for tracking critical business transactions.</li>
-        <li contenteditable="false">Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates.</li>
-        <li contenteditable="false">Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards.</li>
-        <li contenteditable="false">Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ── PERSONAL PROJECTS ── -->
-  <section class="sec">
-    <div class="sec-title">Personal Projects</div>
-
-    <div class="proj-item">
-      <div class="proj-hdr">
-        <span class="proj-name" contenteditable="false">KYAAT — Gesture-Controlled Mouse</span>
-        <span class="proj-tech" contenteditable="false">Python, OpenCV</span>
-      </div>
-      <p class="proj-desc" contenteditable="false">Developed a computer-vision tool using Python and OpenCV to recognize real-time hand movements and translate gestures into mouse cursor interactions with sub-20ms response latency.</p>
-    </div>
-
-    <div class="proj-item">
-      <div class="proj-hdr">
-        <span class="proj-name" contenteditable="false">Personal Portfolio</span>
-        <span class="proj-tech" contenteditable="false">Web Development</span>
-      </div>
-      <p class="proj-desc" contenteditable="false">Designed and built a fully responsive personal portfolio website to showcase technical skills, live project demonstrations, and professional experience.</p>
-      <p class="proj-url">Available at: <a href="https://alanz.netlify.app/" target="_blank" contenteditable="false">alanz.netlify.app</a></p>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION ── -->
-  <section class="sec">
-    <div class="sec-title">Education</div>
-    <div class="edu-hdr">
-      <span class="edu-deg" contenteditable="false">Bachelor of Technology (B.Tech) — Information Technology</span>
-      <span class="edu-year" contenteditable="false">2020 – 2024</span>
-    </div>
-    <div class="edu-sub" contenteditable="false">Mohamed Sathak A J College of Engineering <span class="sp">|</span> Chennai, India <span class="sp">|</span> 80% (First Class)</div>
-  </section>
-
-  <!-- ── ACHIEVEMENTS & CERTIFICATIONS ── -->
-  <section class="sec">
-    <div class="sec-title">Achievements &amp; Certifications</div>
-    <ul class="bl">
-      <li contenteditable="false"><strong>The Versatile Rockstar Award</strong>, Megam Technologies, 2026 — certificate and trophy for excellent performance.</li>
-      <li contenteditable="false">Full Stack Development — Infosys Springboard (Frontend Frameworks, Backend APIs, &amp; Databases)</li>
-      <li contenteditable="false">Python Programming — Spoken Tutorial Project at IIT Bombay</li>
-    </ul>
-  </section>
-
-</div><!-- /resume -->
-</div><!-- /page-wrapper -->
-
-<!-- ══ QUICK EDIT SIDEBAR PANEL ══ -->
-<div class="edit-panel" id="editPanel">
-  <h3>✏️ Quick Edit</h3>
-  <label>Full Name</label>
-  <input type="text" id="q_name" oninput="syncText('name', this.value)" value="BOOBALAN V." />
-  <label>Job Title</label>
-  <input type="text" id="q_title" oninput="syncText('jobTitle', this.value)" value="Software Developer | Full-Stack Developer" />
-  <label>Location</label>
-  <input type="text" id="q_loc" oninput="syncText('location', this.value)" value="Chennai, Tamil Nadu, India" />
-  <label>Phone</label>
-  <input type="text" id="q_phone" oninput="syncText('phone', this.value)" value="+91 9025006329" />
-  <label>Email</label>
-  <input type="text" id="q_email" oninput="syncText('email', this.value)" value="boobalanvaithiyanathan1@gmail.com" />
-  <hr />
-  <label>Professional Summary</label>
-  <textarea rows="6" oninput="syncText('summary', this.value)">Software Developer with nearly 2 years of professional experience developing responsive web applications, robust REST APIs, and database-driven enterprise solutions. Skilled in Angular, Node.js, NestJS, PHP, PostgreSQL, and MongoDB. Hands-on experience integrating open-source LLMs via Model Context Protocol (MCP) for conversational business intelligence, developing automated PDF reporting systems, and managing deployments on Nginx and Apache servers. Dedicated to writing clean, maintainable code, solving complex business requirements, and optimizing application performance.</textarea>
-  <hr />
-  <small style="color:#64748B;font-size:11.5px;line-height:1.4;display:block;">
-    💡 <b>Tip:</b> Click directly on any text or bullet point inside the resume to edit it inline!
-  </small>
-</div>
-
-<!-- TOAST NOTIFICATION -->
-<div class="toast" id="toast"></div>
-
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════
    Resume Builder — style.css
    Themes: Classic Navy (default), Modern Purple, Minimal, Green
 ═══════════════════════════════════════════════ */
@@ -100,11 +100,10 @@ body.edit-open .page-wrapper { margin-right: 300px; }
   height: 1123px;
   background: #fff;
   box-shadow: 0 8px 30px rgba(0,0,0,.22), 0 1px 4px rgba(0,0,0,.1);
-  padding: 30px 44px 30px;
+  padding: 32px 44px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 13px;
+  justify-content: space-between;
   box-sizing: border-box;
 }
 
@@ -240,9 +239,36 @@ body.edit-mode [contenteditable="true"]:focus { background: #DBEAFE; outline: 1.
 /* ── Print ── */
 @page { size: A4 portrait; margin: 0; }
 @media print {
-  html, body { width: 210mm !important; height: 297mm !important; margin: 0 !important; padding: 0 !important; background: #fff !important; }
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: hidden !important;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
   .toolbar, .edit-panel, .toast { display: none !important; }
   .page-wrapper { margin: 0 !important; padding: 0 !important; }
   body.edit-open .page-wrapper { margin-right: 0 !important; }
-  .resume { box-shadow: none !important; width: 210mm !important; min-height: 297mm !important; padding: 10mm 14mm !important; margin: 0 !important; border: none !important; }
+  .resume {
+    box-shadow: none !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    padding: 32px 44px 32px !important;
+    margin: 0 !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+  }
 }

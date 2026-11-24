@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════
    Resume Builder — app.js
    Edit Mode · Theme · PDF Export · Word Export
 ═══════════════════════════════════════════════ */
@@ -43,35 +43,12 @@ function applyTheme(theme) {
   showToast("Theme: " + theme.charAt(0).toUpperCase() + theme.slice(1));
 }
 
-// ── PDF Export ────────────────────────────────
+// ── PDF Export — uses browser print (exact HTML match, vector PDF) ──
 function exportPDF() {
   const wasEdit = isEditMode;
   if (wasEdit) toggleEdit();
-
-  const toolbar = document.getElementById("toolbar");
-  toolbar.style.display = "none";
-
-  const el  = document.getElementById("resume");
-  const opt = {
-    margin:      [8, 8, 8, 8],
-    filename:    "Boobalan_V_Resume.pdf",
-    image:       { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true, logging: false },
-    jsPDF:       { unit: "mm", format: "a4", orientation: "portrait" },
-    pagebreak:   { mode: ["avoid-all", "css", "legacy"] }
-  };
-
-  showToast("Generating PDF…");
-
-  html2pdf().set(opt).from(el).save().then(() => {
-    toolbar.style.display = "";
-    showToast("✅ PDF saved!");
-    if (wasEdit) toggleEdit();
-  }).catch(err => {
-    toolbar.style.display = "";
-    showToast("❌ " + err.message);
-    if (wasEdit) toggleEdit();
-  });
+  window.print();
+  if (wasEdit) setTimeout(() => toggleEdit(), 500);
 }
 
 // ── Word Export ───────────────────────────────
@@ -101,7 +78,7 @@ function exportWord() {
           new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t("name"), bold: true, size: 46, color: "1B365D" })] }),
           new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t("jobTitle"), bold: true, size: 22, color: "1E293B" })] }),
           new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t("location") + "  |  " + t("phone") + "  |  " + t("email"), size: 18, color: "475569" })] }),
-          new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "LinkedIn: Boobalan V.  |  GitHub: boobalanIT  |  Portfolio: alanz.netlify.app", size: 18, color: "475569" })] }),
+          new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "LinkedIn: Boobalan V  |  GitHub: boobalanIT  |  Portfolio: alanz.netlify.app", size: 18, color: "475569" })] }),
           blank(),
 
           // Professional Summary
@@ -124,21 +101,23 @@ function exportWord() {
           new Paragraph({ children: [new TextRun({ text: "Megam Technologies", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   December 2024 – Present", bold: true, size: 19, color: "1E293B" })] }),
           new Paragraph({ children: [new TextRun({ text: "Software Developer | Chennai, India", italics: true, size: 19, color: "475569" })] }),
           new Paragraph({ children: [new TextRun({ text: "Datalytics — AI-Powered Business Intelligence Platform", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed responsive client components in Angular and integrated backend REST APIs built with Node.js and NestJS."),
-          bullet("Integrated an open-source large language model (LLM) using Model Context Protocol (MCP), enabling users to ask business questions in natural language and receive automated insights."),
-          bullet("Built dynamic reporting tools and interactive dashboards to track key business metrics such as employee work hours, project velocity, and issue tracking."),
-          bullet("Configured Nginx as a reverse proxy to route frontend client traffic and backend API microservices securely; managed GitLab CI/CD pipelines."),
+          bullet("Developed responsive frontend components using Angular and integrated REST APIs built with Node.js and NestJS."),
+          bullet("Integrated an open-source Large Language Model (LLM) with Model Context Protocol (MCP), enabling users to query business data using natural language and receive AI-generated insights."),
+          bullet("Developed interactive dashboards and reporting features to monitor key business metrics, including employee work hours, project progress, and issue tracking."),
+          bullet("Configured Nginx as a reverse proxy to route frontend requests and backend API traffic, and managed GitLab CI/CD pipelines for application deployment."),
           new Paragraph({ children: [new TextRun({ text: "Datalytics — UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, and data tables with sorting, filtering, and pagination. Maintained independent versioning and published the package to npm."),
+          bullet("UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, data tables with sorting, filtering, and pagination, and report configuration settings. Maintained independent versioning and published the package to npm."),
           bullet("Embed SDK: Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication."),
           bullet("Package Management & Integration: Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform."),
-          new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0 (TMS) — Multi-Tenant Industrial ERP", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed and maintained core ERP modules across 300+ database tables covering manufacturing operations, inventory control, purchase orders, and customer billing using PHP and PostgreSQL."),
-          bullet("Implemented PostgreSQL schema-per-tenant isolation to ensure complete data security and privacy across multiple enterprise clients."),
-          bullet("Utilized MongoDB to implement immutable audit logs and multi-level approval workflows for tracking critical business transactions."),
-          bullet("Wrote and optimized SQL queries, views, materialized views, functions, and triggers to handle production batch tracking and inventory updates."),
-          bullet("Built automated PDF generation using mPDF for official delivery challans, GST-compliant tax invoices, and job cards."),
-          bullet("Deployed and maintained the application on Apache with PHP-FPM, including server configuration and environment setup."),
+          new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0 — Tannery Management System (TMS)", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Migrated PHP applications and servers, configured deployment environments, and performed application maintenance, bug fixes, and feature enhancements."),
+          bullet("Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business operations across 300+ database tables."),
+          bullet("Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for different enterprise clients."),
+          bullet("Implemented and maintained MongoDB-based audit logging and multi-level approval workflows to track business transactions."),
+          bullet("Developed and optimized SQL queries, views, materialized views, functions, and triggers to support application workflows and database operations."),
+          bullet("Implemented automated PDF generation using mPDF for delivery challans, GST invoices, and job cards."),
+          bullet("Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and environment configuration for multiple client applications."),
+          bullet("Configured and maintained cron jobs to automate scheduled application tasks and background processes."),
           blank(),
 
           // Personal Projects

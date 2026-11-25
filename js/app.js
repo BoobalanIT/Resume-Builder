@@ -100,19 +100,19 @@ function exportWord() {
           heading("Professional Experience"),
           new Paragraph({ children: [new TextRun({ text: "Megam Technologies", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   December 2024 – Present", bold: true, size: 19, color: "1E293B" })] }),
           new Paragraph({ children: [new TextRun({ text: "Software Developer | Chennai, India", italics: true, size: 19, color: "475569" })] }),
-          new Paragraph({ children: [new TextRun({ text: "Datalytics: AI-Powered Business Intelligence Platform", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Implemented new features, resolved application bugs, and developed interactive dashboards to visualize business metrics, including employee working hours, time spent, project progress, and issue tracking."),
-          bullet("Integrated a self-hosted open-source LLM with MCP-based tools to build a natural language chatbot that retrieves user-specific and company-specific business data, answers queries, and generates reports."),
-          bullet("Implemented TOTP-based Two-Factor Authentication (2FA) and developed responsive Angular components integrated with REST APIs built using Node.js and NestJS."),
-          new Paragraph({ children: [new TextRun({ text: "Datalytics: Reusable UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed a reusable Angular component library featuring interactive charts, KPI widgets, and data tables with sorting, filtering, pagination, and report configuration capabilities."),
-          bullet("Built an Embed SDK that enables third-party applications to integrate and display Datalytics dashboards using token-based authentication."),
-          bullet("Packaged and versioned reusable library components for integration across applications, with project source code managed through a self-hosted GitLab environment."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics — AI-Powered Business Intelligence SaaS Platform", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Contributed to the development, enhancement, and maintenance of the Datalytics SaaS platform, implementing new features, resolving bugs, and improving application functionality."),
+          bullet("Developed interactive dashboards and reporting features to visualize business metrics, including employee working hours, time spent, project progress, and issue tracking."),
+          bullet("Integrated a self-hosted open-source LLM with MCP-based tools to develop a natural language chatbot that retrieves user-specific and company-specific business data, answers queries, and generates reports."),
+          bullet("Developed TOTP-based Two-Factor Authentication (2FA) and responsive Angular components integrated with REST APIs built using Node.js and NestJS."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics — Reusable UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Developed a reusable Angular component library featuring interactive charts, KPI widgets, and configurable data tables with sorting, filtering, and pagination."),
+          bullet("Built an Embed SDK with token-based authentication, enabling third-party applications to integrate and display Datalytics dashboards, and packaged reusable components for integration across applications."),
           new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0 — Tannery Management System (TMS)", bold: true, size: 19, color: "1B365D" })] }),
           bullet("Supported the end-to-end development and maintenance of a multi-tenant tannery ERP with 300+ database tables and approximately 200K+ lines of code using PHP, PostgreSQL, and MongoDB, covering production batch tracking and stock assortment."),
           bullet("Handled application setup, configuration, deployment, and ongoing maintenance across client environments, including migrating PHP applications to Ubuntu servers on DigitalOcean."),
           bullet("Extended the PostgreSQL schema-per-tenant architecture, optimized SQL queries and database objects, and implemented MongoDB-based audit logging and multi-level approval workflows."),
-          bullet("Configured and maintained Apache, PHP-FPM, and cron jobs, and automated PDF generation using mPDF for GST invoices, delivery challans, and job cards."),
+          bullet("Configured and maintained Apache and cron jobs, and automated PDF generation using mPDF for GST invoices, delivery challans, and job cards."),
           bullet("Worked directly with clients through meetings and discussions to gather requirements, understand business workflows, address feature requests, troubleshoot issues, and deliver enhancements."),
           blank(),
 
@@ -133,10 +133,9 @@ function exportWord() {
 
           // Achievements & Certifications
           heading("Achievements & Certifications"),
-          new Paragraph({ children: [
-            new TextRun({ text: "The Versatile Rockstar Award", bold: true, size: 19 }),
-            new TextRun({ text: " (Megam Technologies, 2026)  •  Full Stack Development (Infosys Springboard — Frontend Frameworks, Backend APIs, & Databases)  •  Python Programming (Spoken Tutorial Project, IIT Bombay)", size: 19 })
-          ] })
+          bullet("The Versatile Rockstar Award (Megam Technologies, 2026)"),
+          bullet("Full Stack Development (Infosys Springboard — Frontend Frameworks, Backend APIs, & Databases)"),
+          bullet("Python Programming (Spoken Tutorial Project, IIT Bombay)")
         ]
       }]
     });

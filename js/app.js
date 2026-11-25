@@ -91,7 +91,7 @@ function exportWord() {
           bullet("Frontend: Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap"),
           bullet("Backend: Node.js, NestJS, PHP, REST APIs"),
           bullet("Databases: PostgreSQL, MongoDB"),
-          bullet("Web Servers & Deployment: Nginx, Apache, Application Deployment"),
+          bullet("Web Servers & Deployment: Nginx, Apache, DigitalOcean (Ubuntu), Application Deployment"),
           bullet("Tools & CI/CD: Git, GitLab CI/CD, Postman, pgAdmin"),
           bullet("AI & Integration: Open-source LLM integration, Model Context Protocol (MCP), AI-powered chatbot integration"),
           blank(),
@@ -131,8 +131,8 @@ function exportWord() {
 
           // Education
           heading("Education"),
-          new Paragraph({ children: [new TextRun({ text: "Bachelor of Technology (B.Tech) — Information Technology", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   2020 – 2024", bold: true, size: 19, color: "1E293B" })] }),
-          new Paragraph({ children: [new TextRun({ text: "Mohamed Sathak A J College of Engineering  |  Chennai, India  |  80% (First Class)", size: 19, color: "475569" })] }),
+          new Paragraph({ children: [new TextRun({ text: "Bachelor of Technology in Information Technology — Anna University", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   2020 – 2024", bold: true, size: 19, color: "1E293B" })] }),
+          new Paragraph({ children: [new TextRun({ text: "Mohamed Sathak A J College of Engineering  |  Chennai, India  |  80% (First Class with Distinction)", size: 19, color: "475569" })] }),
           blank(),
 
           // Achievements & Certifications

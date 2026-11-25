@@ -238,16 +238,11 @@ body.edit-open .page-wrapper {
 }
 
 /* ── Skills ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  row-gap: 4px;
-}
+.skills-list { display: block; }
 
 .sk {
   font-size: 9.8px;
-  line-height: 1.5;
+  line-height: 1.65;
   color: var(--black);
 }
 

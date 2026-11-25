@@ -100,24 +100,24 @@ function exportWord() {
           heading("Professional Experience"),
           new Paragraph({ children: [new TextRun({ text: "Megam Technologies", bold: true, size: 21, color: "111827" }), new TextRun({ text: "   December 2024 – Present", bold: true, size: 19, color: "1E293B" })] }),
           new Paragraph({ children: [new TextRun({ text: "Software Developer | Chennai, India", italics: true, size: 19, color: "475569" })] }),
-          new Paragraph({ children: [new TextRun({ text: "Datalytics — AI-Powered Business Intelligence Platform", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Developed responsive frontend components using Angular and integrated REST APIs built with Node.js and NestJS."),
-          bullet("Integrated an open-source Large Language Model (LLM) with Model Context Protocol (MCP), enabling users to query business data using natural language and receive AI-generated insights."),
-          bullet("Developed interactive dashboards and reporting features to monitor key business metrics, including employee work hours, project progress, and issue tracking."),
-          bullet("Configured Nginx as a reverse proxy to route frontend requests and backend API traffic, and managed GitLab CI/CD pipelines for application deployment."),
-          new Paragraph({ children: [new TextRun({ text: "Datalytics — UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("UI Component Library: Developed an independent, reusable Angular component library featuring interactive charts (bar, line, area, and pie), KPI widgets, data tables with sorting, filtering, and pagination, and report configuration settings. Maintained independent versioning and published the package to npm."),
-          bullet("Embed SDK: Developed a reusable Embed SDK within the main application repository, with a dedicated package.json and independent npm publishing configuration. Enabled third-party applications to embed live analytics dashboards using token-based authentication."),
-          bullet("Package Management & Integration: Managed independent versioning and npm releases for both packages, and integrated updated library versions into the main Datalytics SaaS platform."),
-          new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0 — Tannery Management System (TMS)", bold: true, size: 19, color: "1B365D" })] }),
-          bullet("Migrated PHP applications and servers, configured deployment environments, and performed application maintenance, bug fixes, and feature enhancements."),
-          bullet("Developed and maintained core application modules using PHP and PostgreSQL, supporting tannery business operations across 300+ database tables."),
-          bullet("Implemented PostgreSQL schema-per-tenant architecture to maintain separate database schemas for different enterprise clients."),
-          bullet("Implemented and maintained MongoDB-based audit logging and multi-level approval workflows to track business transactions."),
-          bullet("Developed and optimized SQL queries, views, materialized views, functions, and triggers to support application workflows and database operations."),
-          bullet("Implemented automated PDF generation using mPDF for delivery challans, GST invoices, and job cards."),
-          bullet("Configured and maintained Apache and PHP-FPM environments, including server setup, deployment, and environment configuration for multiple client applications."),
-          bullet("Configured and maintained cron jobs to automate scheduled application tasks and background processes."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics: AI-Powered Business Intelligence Platform", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Integrated an open-source LLM via Model Context Protocol (MCP), enabling users to query business data in natural language and receive AI-generated insights."),
+          bullet("Built interactive dashboards and reports to track key business metrics, including employee work hours, project progress, and issue tracking."),
+          bullet("Created responsive Angular components and connected them to REST APIs built with Node.js and NestJS."),
+          bullet("Configured Nginx as a reverse proxy to route frontend and backend API traffic, and set up GitLab CI/CD pipelines for automated deployment."),
+          new Paragraph({ children: [new TextRun({ text: "Datalytics: UI Component Library & Embed SDK", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Designed a reusable Angular component library with interactive charts, KPI widgets, and data tables supporting sorting, filtering, pagination, and report configuration."),
+          bullet("Engineered an Embed SDK that lets third-party applications embed live analytics dashboards using token-based authentication."),
+          bullet("Published versioned packages to a private GitLab npm registry, so other applications can install them through .npmrc configuration."),
+          new Paragraph({ children: [new TextRun({ text: "LeatherLink TanPro 11.0: Tannery Management System (TMS)", bold: true, size: 19, color: "1B365D" })] }),
+          bullet("Migrated PHP applications to a newly provisioned Ubuntu server on DigitalOcean, setting up the complete hosting environment and handling deployment, maintenance, bug fixes, and feature enhancements."),
+          bullet("Maintained core PHP and PostgreSQL modules that support tannery operations across 300+ database tables."),
+          bullet("Architected a PostgreSQL schema-per-tenant model to isolate data for each enterprise client."),
+          bullet("Implemented MongoDB-based audit logging and multi-level approval workflows to track business transactions."),
+          bullet("Optimized SQL queries, views, materialized views, functions, and triggers to support application workflows."),
+          bullet("Automated PDF generation with mPDF for delivery challans, GST invoices, and job cards."),
+          bullet("Configured Apache and PHP-FPM environments for multiple client applications, covering server setup, deployment, and environment configuration."),
+          bullet("Scheduled cron jobs to automate recurring application tasks and background processes."),
           blank(),
 
           // Personal Projects
@@ -137,9 +137,9 @@ function exportWord() {
 
           // Achievements & Certifications
           heading("Achievements & Certifications"),
-          bullet("The Versatile Rockstar Award, Megam Technologies, 2026 — certificate and trophy for excellent performance."),
-          bullet("Full Stack Development — Infosys Springboard (Frontend Frameworks, Backend APIs, & Databases)"),
-          bullet("Python Programming — Spoken Tutorial Project at IIT Bombay")
+          bullet("The Versatile Rockstar Award, Megam Technologies, 2026: certificate and trophy for excellent performance."),
+          bullet("Full Stack Development: Infosys Springboard (Frontend Frameworks, Backend APIs, and Databases)"),
+          bullet("Python Programming: Spoken Tutorial Project, IIT Bombay")
         ]
       }]
     });
